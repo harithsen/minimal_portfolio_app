@@ -21,6 +21,10 @@ final lightTheme = ThemeData(
   appBarTheme: AppBarTheme(color: Colors.white12),
   brightness: Brightness.dark,
   primarySwatch: Colors.teal,
+  outlinedButtonTheme: OutlinedButtonThemeData(
+      style: ButtonStyle(
+    foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+  )),
   //accentColor: Colors.teal,
   iconTheme: IconThemeData(color: Colors.black87),
   textTheme: TextTheme(
@@ -43,6 +47,10 @@ final lightTheme = ThemeData(
 );
 
 final darkTheme = ThemeData(
+  outlinedButtonTheme: OutlinedButtonThemeData(
+      style: ButtonStyle(
+    foregroundColor: MaterialStateProperty.all<Color>(Colors.black87),
+  )),
   primarySwatch: Colors.teal,
   inputDecorationTheme: InputDecorationTheme(
     //border: OutlineInputBorder(),

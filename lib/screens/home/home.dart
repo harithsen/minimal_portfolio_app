@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:minimal_portfolio_webapp/screens/about/about.dart';
+import 'package:minimal_portfolio_webapp/screens/books/books.dart';
 import 'package:minimal_portfolio_webapp/screens/components/top_bar.dart';
+import 'package:minimal_portfolio_webapp/screens/projects/projects.dart';
 
 import 'components/social_icons.dart';
 
@@ -8,10 +11,13 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: TopBar(),
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            SizedBox(
+              height: 50,
+            ),
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: CircleAvatar(
@@ -55,8 +61,12 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 "Network Engineer by day, Software Developer by night.",
-                style: Theme.of(context).textTheme.bodyText1,
+                style: Theme.of(context).textTheme.bodyText2,
+                textAlign: TextAlign.center,
               ),
+            ),
+            SizedBox(
+              height: 16,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -68,7 +78,13 @@ class HomeScreen extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.zero),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AboutMe(),
+                          ));
+                    },
                     label: Text("About Me"),
                     icon: Image.asset(
                       'emojis/about.png',
@@ -83,7 +99,13 @@ class HomeScreen extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.zero),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Projects(),
+                          ));
+                    },
                     label: Text("Projects"),
                     icon: Image.asset(
                       'emojis/coding.png',
@@ -97,14 +119,22 @@ class HomeScreen extends StatelessWidget {
               style: OutlinedButton.styleFrom(
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Books()),
+                );
+              },
               label: Text("Fav Books"),
               icon: Image.asset(
                 'emojis/book.png',
                 width: 16,
               ),
             ),
-            SocialIcons()
+            SocialIcons(),
+            SizedBox(
+              height: 30,
+            )
           ],
         ),
       ),

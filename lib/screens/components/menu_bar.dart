@@ -1,0 +1,101 @@
+import 'package:flutter/material.dart';
+import 'package:minimal_portfolio_webapp/screens/about/about.dart';
+import 'package:minimal_portfolio_webapp/screens/books/books.dart';
+import 'package:minimal_portfolio_webapp/screens/home/home.dart';
+import 'package:minimal_portfolio_webapp/screens/projects/projects.dart';
+
+class MenuBar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: OutlinedButton.icon(
+                style: OutlinedButton.styleFrom(
+                  shape:
+                      RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                label: Text("Home"),
+                icon: Image.asset(
+                  'emojis/house.png',
+                  width: 16,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: OutlinedButton.icon(
+                style: OutlinedButton.styleFrom(
+                  shape:
+                      RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AboutMe(),
+                      ));
+                },
+                label: Text("About Me"),
+                icon: Image.asset(
+                  'emojis/about.png',
+                  width: 16,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: OutlinedButton.icon(
+                style: OutlinedButton.styleFrom(
+                  shape:
+                      RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Projects(),
+                      ));
+                },
+                label: Text("Projects"),
+                icon: Image.asset(
+                  'emojis/coding.png',
+                  width: 16,
+                ),
+              ),
+            ),
+            OutlinedButton.icon(
+              style: OutlinedButton.styleFrom(
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+              ),
+              onPressed: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Books()),
+                );
+              },
+              label: Text("Fav Books"),
+              icon: Image.asset(
+                'emojis/book.png',
+                width: 16,
+              ),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 20,
+        )
+      ],
+    );
+  }
+}
