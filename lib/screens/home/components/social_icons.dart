@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SocialIcons extends StatelessWidget {
+  launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -18,19 +27,9 @@ class SocialIcons extends StatelessWidget {
                 icon: Image.asset(
                   'emojis/twitter.png',
                 ),
-                onPressed: () {}),
-          ),
-          Container(
-            margin: EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.white,
-            ),
-            child: IconButton(
-                icon: Image.asset(
-                  'emojis/facebook.png',
-                ),
-                onPressed: () {}),
+                onPressed: () {
+                  launchURL("https://twitter.com/DevHarithWick");
+                }),
           ),
           Container(
             margin: EdgeInsets.all(8),
@@ -42,7 +41,9 @@ class SocialIcons extends StatelessWidget {
                 icon: Image.asset(
                   'emojis/linkedin.png',
                 ),
-                onPressed: () {}),
+                onPressed: () {
+                  launchURL("https://www.linkedin.com/in/harithwick/");
+                }),
           ),
           Container(
             margin: EdgeInsets.all(8),
@@ -54,7 +55,9 @@ class SocialIcons extends StatelessWidget {
                 icon: Image.asset(
                   'emojis/gmail.png',
                 ),
-                onPressed: () {}),
+                onPressed: () {
+                  launchURL("mailto:harithsen@gmail.com");
+                }),
           ),
           Container(
             margin: EdgeInsets.all(8),
@@ -66,7 +69,9 @@ class SocialIcons extends StatelessWidget {
                 icon: Image.asset(
                   'emojis/github.png',
                 ),
-                onPressed: () {}),
+                onPressed: () {
+                  launchURL("https://github.com/harithsen");
+                }),
           ),
         ],
       ),
