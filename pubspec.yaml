@@ -26,3 +26,4 @@ flutter:
   assets:
     - assets/images/
     - assets/emojis/
+    - assets/emojis/facebook.png

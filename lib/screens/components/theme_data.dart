@@ -20,7 +20,7 @@ class ThemeProvider with ChangeNotifier {
 final lightTheme = ThemeData(
   appBarTheme: AppBarTheme(color: Colors.white12),
   brightness: Brightness.dark,
-  primarySwatch: Colors.teal,
+  primarySwatch: Colors.blue,
   outlinedButtonTheme: OutlinedButtonThemeData(
       style: ButtonStyle(
     foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
@@ -34,7 +34,7 @@ final lightTheme = ThemeData(
       color: Colors.deepOrange,
     ),
     bodyText1: GoogleFonts.aBeeZee(
-        fontSize: 18,
+        fontSize: 14,
         fontWeight: FontWeight.bold,
         color: Colors.white70,
         letterSpacing: 1),
@@ -51,7 +51,7 @@ final darkTheme = ThemeData(
       style: ButtonStyle(
     foregroundColor: MaterialStateProperty.all<Color>(Colors.black87),
   )),
-  primarySwatch: Colors.teal,
+  primarySwatch: Colors.blue,
   inputDecorationTheme: InputDecorationTheme(
     //border: OutlineInputBorder(),
     labelStyle: TextStyle(color: Colors.deepOrange, fontSize: 24.0),
@@ -59,7 +59,7 @@ final darkTheme = ThemeData(
   iconTheme: IconThemeData(color: Colors.lightBlue),
   appBarTheme: AppBarTheme(
     color: Colors.white,
-    iconTheme: IconThemeData(color: Colors.teal),
+    iconTheme: IconThemeData(color: Colors.blue),
   ),
   accentColor: Colors.teal,
   textTheme: TextTheme(
@@ -69,9 +69,9 @@ final darkTheme = ThemeData(
       color: Colors.deepOrange,
     ),
     bodyText1: GoogleFonts.aBeeZee(
-        fontSize: 18,
+        fontSize: 14,
         fontWeight: FontWeight.bold,
-        color: Colors.blueGrey,
+        color: Colors.grey[600],
         letterSpacing: 1),
     bodyText2: GoogleFonts.aBeeZee(
       color: Colors.grey[600],

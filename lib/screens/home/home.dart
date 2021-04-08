@@ -54,7 +54,7 @@ class HomeScreen extends StatelessWidget {
               child: Container(
                 height: 3,
                 width: 50,
-                color: Colors.deepOrange,
+                color: Colors.blue,
               ),
             ),
             Padding(
