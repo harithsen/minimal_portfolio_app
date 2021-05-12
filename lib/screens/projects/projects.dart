@@ -19,25 +19,7 @@ class Projects extends StatelessWidget {
               children: [
                 MenuBar(),
                 SubHeading(label: "Projects"),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 8),
-                  child: Text(
-                    "The Lean Startup - Eric Ries",
-                    textAlign: TextAlign.left,
-                    style: Theme.of(context).textTheme.bodyText1,
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(bottom: 8),
-                  height: 200,
-                  width: double.infinity,
-                  color: Colors.grey,
-                ),
-                Text(
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-                  textAlign: TextAlign.justify,
-                  style: Theme.of(context).textTheme.bodyText2,
-                ),
+                Project(),
                 SizedBox(
                   height: 30,
                 ),
@@ -46,6 +28,68 @@ class Projects extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class Project extends StatelessWidget {
+  final String image;
+  final String label;
+  final String disc;
+  final String chipList;
+  const Project({
+    this.image,
+    this.label,
+    this.disc,
+    this.chipList,
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          height: 8,
+        ),
+        CircleAvatar(
+          radius: 50.0,
+          child: ClipOval(child: Image.asset('assets/images/profile_pic.jpg')),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 8, bottom: 8),
+          child: Text(
+            "NAATI Sinhalese",
+            textAlign: TextAlign.left,
+            style: Theme.of(context).textTheme.bodyText1,
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(bottom: 8),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Chip(
+                backgroundColor: Colors.deepOrange,
+                labelPadding: EdgeInsets.symmetric(horizontal: 4, vertical: 0),
+                label: Text(
+                  "Flutter",
+                  style: TextStyle(fontSize: 10, color: Colors.white),
+                ),
+              ),
+              Chip(
+                label: Text("Flutter"),
+              )
+            ],
+          ),
+        ),
+        Text(
+          "An app that helps students excel at the NAATI Sinhalese interpretation exam by providing all study essentials in one location. Pass the NAATI CCL Sinhalese Exam on the first go.",
+          textAlign: TextAlign.justify,
+          style: Theme.of(context).textTheme.bodyText2,
+        ),
+        Divider(),
+      ],
     );
   }
 }
