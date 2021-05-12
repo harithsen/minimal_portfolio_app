@@ -31,7 +31,7 @@ final lightTheme = ThemeData(
     headline5: GoogleFonts.aBeeZee(
         color: Colors.white, fontWeight: FontWeight.w900, letterSpacing: 1.5),
     headline6: GoogleFonts.aBeeZee(
-      color: Colors.deepOrange,
+      color: Colors.blue,
     ),
     bodyText1: GoogleFonts.aBeeZee(
         fontSize: 14,
@@ -66,7 +66,7 @@ final darkTheme = ThemeData(
     headline5: GoogleFonts.aBeeZee(
         color: Colors.black87, fontWeight: FontWeight.w900, letterSpacing: 1.5),
     headline6: GoogleFonts.aBeeZee(
-      color: Colors.deepOrange,
+      color: Colors.blue,
     ),
     bodyText1: GoogleFonts.aBeeZee(
         fontSize: 14,

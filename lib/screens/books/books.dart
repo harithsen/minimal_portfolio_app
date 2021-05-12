@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:minimal_portfolio_webapp/screens/components/menu_bar.dart';
+import 'package:minimal_portfolio_webapp/screens/components/sub_heading.dart';
 import 'package:minimal_portfolio_webapp/screens/components/top_bar.dart';
 
 class Books extends StatelessWidget {
@@ -17,12 +18,8 @@ class Books extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 MenuBar(),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 16),
-                  child: Text(
-                    "Favourite Books",
-                    style: Theme.of(context).textTheme.headline6,
-                  ),
+                SubHeading(
+                  label: "Favourite Books",
                 ),
                 Text(
                   "The Lean Startup - Eric Ries",
@@ -33,6 +30,9 @@ class Books extends StatelessWidget {
                   "Most new businesses fail. But most of those failures are preventable.",
                   textAlign: TextAlign.left,
                   style: Theme.of(context).textTheme.bodyText2,
+                ),
+                SizedBox(
+                  height: 30,
                 ),
               ],
             ),

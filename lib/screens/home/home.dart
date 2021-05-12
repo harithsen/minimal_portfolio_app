@@ -4,6 +4,7 @@ import 'package:minimal_portfolio_webapp/screens/books/books.dart';
 import 'package:minimal_portfolio_webapp/screens/components/top_bar.dart';
 import 'package:minimal_portfolio_webapp/screens/projects/projects.dart';
 
+import 'components/home_nav.dart';
 import 'components/social_icons.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -61,66 +62,15 @@ class HomeScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                "Network Engineer by day, Software Developer by night.",
-                style: Theme.of(context).textTheme.bodyText2,
+                "Developer, Designer & Entrepreneur",
+                style: Theme.of(context).textTheme.bodyText1,
                 textAlign: TextAlign.center,
               ),
             ),
             SizedBox(
               height: 16,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: OutlinedButton.icon(
-                    style: OutlinedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.zero),
-                    ),
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/about');
-                    },
-                    label: Text("About Me"),
-                    icon: Image.asset(
-                      'assets/emojis/about.png',
-                      width: 16,
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: OutlinedButton.icon(
-                    style: OutlinedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.zero),
-                    ),
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/projects');
-                    },
-                    label: Text("Projects"),
-                    icon: Image.asset(
-                      'assets/emojis/coding.png',
-                      width: 16,
-                    ),
-                  ),
-                )
-              ],
-            ),
-            OutlinedButton.icon(
-              style: OutlinedButton.styleFrom(
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
-              ),
-              onPressed: () {
-                Navigator.pushNamed(context, '/books');
-              },
-              label: Text("Fav Books"),
-              icon: Image.asset(
-                'assets/emojis/book.png',
-                width: 16,
-              ),
-            ),
+            HomeNav(),
             SocialIcons(),
             SizedBox(
               height: 30,
