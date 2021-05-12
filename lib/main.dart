@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:minimal_portfolio_webapp/screens/about/about.dart';
+import 'package:minimal_portfolio_webapp/screens/books/books.dart';
 import 'package:minimal_portfolio_webapp/screens/components/theme_data.dart';
 import 'package:minimal_portfolio_webapp/screens/home/home.dart';
+import 'package:minimal_portfolio_webapp/screens/projects/projects.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:url_strategy/url_strategy.dart';
 
 void main() async {
+  setPathUrlStrategy();
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = await SharedPreferences.getInstance();
   bool isLightTheme = prefs.getBool('lightTheme') ?? true;
@@ -26,8 +31,15 @@ class MyApp extends StatelessWidget {
     final themeProvider = Provider.of<ThemeProvider>(context);
 
     return MaterialApp(
-        theme: themeProvider.getThemeData,
-        debugShowCheckedModeBanner: false,
-        home: HomeScreen());
+      theme: themeProvider.getThemeData,
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomeScreen(),
+        '/about': (context) => AboutMe(),
+        '/projects': (context) => Projects(),
+        '/books': (context) => Books(),
+      },
+    );
   }
 }

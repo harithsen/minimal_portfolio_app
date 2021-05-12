@@ -24,7 +24,7 @@ class MenuBar extends StatelessWidget {
                 },
                 label: Text("Home"),
                 icon: Image.asset(
-                  'emojis/house.png',
+                  'assets/emojis/house.png',
                   width: 16,
                 ),
               ),
@@ -38,15 +38,11 @@ class MenuBar extends StatelessWidget {
                 ),
                 onPressed: () {
                   Navigator.pop(context);
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => AboutMe(),
-                      ));
+                  Navigator.pushNamed(context, '/about');
                 },
                 label: Text("About Me"),
                 icon: Image.asset(
-                  'emojis/about.png',
+                  'assets/emojis/about.png',
                   width: 16,
                 ),
               ),
@@ -60,15 +56,11 @@ class MenuBar extends StatelessWidget {
                 ),
                 onPressed: () {
                   Navigator.pop(context);
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => Projects(),
-                      ));
+                  Navigator.pushNamed(context, '/projects');
                 },
                 label: Text("Projects"),
                 icon: Image.asset(
-                  'emojis/coding.png',
+                  'assets/emojis/coding.png',
                   width: 16,
                 ),
               ),
@@ -79,14 +71,11 @@ class MenuBar extends StatelessWidget {
               ),
               onPressed: () {
                 Navigator.pop(context);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Books()),
-                );
+                Navigator.pushNamed(context, '/books');
               },
               label: Text("Fav Books"),
               icon: Image.asset(
-                'emojis/book.png',
+                'assets/emojis/book.png',
                 width: 16,
               ),
             ),

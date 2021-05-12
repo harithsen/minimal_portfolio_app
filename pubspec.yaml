@@ -16,6 +16,7 @@ dependencies:
   google_fonts: ^1.1.0
   emojis: ^0.9.3
   url_launcher: ^6.0.3
+  url_strategy: ^0.2.0
 
 dev_dependencies:
   flutter_test:

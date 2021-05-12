@@ -25,7 +25,7 @@ class SocialIcons extends StatelessWidget {
             ),
             child: IconButton(
                 icon: Image.asset(
-                  'emojis/twitter.png',
+                  'assets/emojis/twitter.png',
                 ),
                 onPressed: () {
                   launchURL("https://twitter.com/DevHarithWick");
@@ -39,7 +39,7 @@ class SocialIcons extends StatelessWidget {
             ),
             child: IconButton(
                 icon: Image.asset(
-                  'emojis/linkedin.png',
+                  'assets/emojis/linkedin.png',
                 ),
                 onPressed: () {
                   launchURL("https://www.linkedin.com/in/harithwick/");
@@ -53,7 +53,7 @@ class SocialIcons extends StatelessWidget {
             ),
             child: IconButton(
                 icon: Image.asset(
-                  'emojis/gmail.png',
+                  'assets/emojis/gmail.png',
                 ),
                 onPressed: () {
                   launchURL("mailto:harithsen@gmail.com");
@@ -67,7 +67,7 @@ class SocialIcons extends StatelessWidget {
             ),
             child: IconButton(
                 icon: Image.asset(
-                  'emojis/github.png',
+                  'assets/emojis/github.png',
                 ),
                 onPressed: () {
                   launchURL("https://github.com/harithsen");

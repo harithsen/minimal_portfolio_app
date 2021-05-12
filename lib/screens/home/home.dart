@@ -22,7 +22,8 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.all(16.0),
               child: CircleAvatar(
                 radius: 50.0,
-                child: ClipOval(child: Image.asset('images/profile_pic.jpg')),
+                child: ClipOval(
+                    child: Image.asset('assets/images/profile_pic.jpg')),
               ),
             ),
             Row(
@@ -36,7 +37,7 @@ class HomeScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: Image.asset(
-                    'emojis/hand_wave.png',
+                    'assets/emojis/hand_wave.png',
                     scale: 1.8,
                   ),
                 )
@@ -79,15 +80,11 @@ class HomeScreen extends StatelessWidget {
                           borderRadius: BorderRadius.zero),
                     ),
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => AboutMe(),
-                          ));
+                      Navigator.pushNamed(context, '/about');
                     },
                     label: Text("About Me"),
                     icon: Image.asset(
-                      'emojis/about.png',
+                      'assets/emojis/about.png',
                       width: 16,
                     ),
                   ),
@@ -100,15 +97,11 @@ class HomeScreen extends StatelessWidget {
                           borderRadius: BorderRadius.zero),
                     ),
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Projects(),
-                          ));
+                      Navigator.pushNamed(context, '/projects');
                     },
                     label: Text("Projects"),
                     icon: Image.asset(
-                      'emojis/coding.png',
+                      'assets/emojis/coding.png',
                       width: 16,
                     ),
                   ),
@@ -120,14 +113,11 @@ class HomeScreen extends StatelessWidget {
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
               ),
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Books()),
-                );
+                Navigator.pushNamed(context, '/books');
               },
               label: Text("Fav Books"),
               icon: Image.asset(
-                'emojis/book.png',
+                'assets/emojis/book.png',
                 width: 16,
               ),
             ),
