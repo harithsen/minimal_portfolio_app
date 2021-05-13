@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
     final themeProvider = Provider.of<ThemeProvider>(context);
 
     return MaterialApp(
+      title: "Harith Wickramasingha",
       theme: themeProvider.getThemeData,
       debugShowCheckedModeBanner: false,
       initialRoute: '/',

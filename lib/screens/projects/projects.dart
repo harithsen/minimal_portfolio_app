@@ -48,13 +48,14 @@ class Project extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
           height: 8,
         ),
-        CircleAvatar(
-          radius: 50.0,
-          child: ClipOval(child: Image.asset('assets/images/profile_pic.jpg')),
+        Container(
+          width: 60,
+          child: ClipOval(child: Image.asset('assets/images/quicknotes.png')),
         ),
         Padding(
           padding: const EdgeInsets.only(top: 8, bottom: 8),
@@ -70,7 +71,7 @@ class Project extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Chip(
-                backgroundColor: Colors.deepOrange,
+                backgroundColor: Colors.blue,
                 labelPadding: EdgeInsets.symmetric(horizontal: 4, vertical: 0),
                 label: Text(
                   "Flutter",
@@ -87,6 +88,18 @@ class Project extends StatelessWidget {
           "An app that helps students excel at the NAATI Sinhalese interpretation exam by providing all study essentials in one location. Pass the NAATI CCL Sinhalese Exam on the first go.",
           textAlign: TextAlign.justify,
           style: Theme.of(context).textTheme.bodyText2,
+        ),
+        Row(
+          children: [
+            IconButton(
+                icon: Image.asset('assets/images/appstore.png'),
+                onPressed: () {}),
+            IconButton(
+                icon: Image.asset('assets/images/playstore.png'),
+                onPressed: () {}),
+            IconButton(
+                icon: Image.asset('assets/images/www.png'), onPressed: () {})
+          ],
         ),
         Divider(),
       ],

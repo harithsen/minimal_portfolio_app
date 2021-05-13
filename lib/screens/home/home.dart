@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:minimal_portfolio_webapp/screens/about/about.dart';
-import 'package:minimal_portfolio_webapp/screens/books/books.dart';
 import 'package:minimal_portfolio_webapp/screens/components/top_bar.dart';
-import 'package:minimal_portfolio_webapp/screens/projects/projects.dart';
-
 import 'components/home_nav.dart';
 import 'components/social_icons.dart';
 

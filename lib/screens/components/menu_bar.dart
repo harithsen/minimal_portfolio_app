@@ -29,7 +29,7 @@ class MenuBar extends StatelessWidget {
               ),
               MenuItem(
                 name: "Projects",
-                iconPath: 'assets/emojis/coding.png',
+                iconPath: 'assets/emojis/rocket.png',
                 navPath: () {
                   Navigator.pop(context);
                   Navigator.pushNamed(context, '/projects');

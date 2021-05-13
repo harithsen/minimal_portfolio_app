@@ -41,7 +41,7 @@ class HomeNav extends StatelessWidget {
                 },
                 label: Text("Projects"),
                 icon: Image.asset(
-                  'assets/emojis/coding.png',
+                  'assets/emojis/rocket.png',
                   width: 16,
                 ),
               ),
