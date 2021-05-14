@@ -14,6 +14,7 @@ class Books extends StatelessWidget {
         alignment: Alignment.topCenter,
         child: Container(
           margin: EdgeInsets.all(16),
+          padding: EdgeInsets.only(bottom: 30),
           width: 600,
           child: SingleChildScrollView(
             child: Column(
@@ -47,9 +48,6 @@ class Books extends StatelessWidget {
                         "Book talks about Elon Musk's life from his childhood up to the time he spent at Zip2 and PayPal, and then onto SpaceX, Tesla, and SolarCity.",
                     bookURL:
                         "https://www.amazon.com.au/Elon-Musk-Ashlee-Vance/dp/0753555646/ref=asc_df_0753555646/?tag=googleshopdsk-22&linkCode=df0&hvadid=341792459411&hvpos=&hvnetw=g&hvrand=13131495030383389514&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9071864&hvtargid=pla-524631536049&psc=1"),
-                SizedBox(
-                  height: 30,
-                ),
               ],
             ),
           ),
