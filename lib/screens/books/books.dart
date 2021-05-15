@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:minimal_portfolio_webapp/screens/components/menu_bar.dart';
 import 'package:minimal_portfolio_webapp/screens/components/sub_heading.dart';
 import 'package:minimal_portfolio_webapp/screens/components/top_bar.dart';
-
 import 'components/book_item.dart';
 
 class Books extends StatelessWidget {
