@@ -6,6 +6,7 @@ class Project {
   String appStore;
   String playStore;
   String website;
+  bool comingSoon;
 
   Project(
       {this.imagePath,
@@ -14,5 +15,6 @@ class Project {
       this.tools,
       this.appStore,
       this.playStore,
-      this.website});
+      this.website,
+      this.comingSoon});
 }

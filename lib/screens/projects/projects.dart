@@ -15,7 +15,6 @@ class Projects extends StatelessWidget {
         alignment: Alignment.topCenter,
         child: Container(
           margin: EdgeInsets.all(16),
-          padding: EdgeInsets.only(bottom: 30),
           width: 600,
           child: SingleChildScrollView(
             child: Column(
