@@ -1,5 +1,3 @@
-import 'package:minimal_portfolio_webapp/screens/books/components/book_item.dart';
-
 class Book {
   String imagePath;
   String heading;

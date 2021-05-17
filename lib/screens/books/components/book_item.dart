@@ -14,6 +14,7 @@ class BookItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+        scrollDirection: Axis.vertical,
         shrinkWrap: true,
         itemCount: BooksBrain().booksBank.length,
         itemBuilder: (context, index) {

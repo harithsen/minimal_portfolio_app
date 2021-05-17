@@ -14,6 +14,7 @@ class AboutMe extends StatelessWidget {
           margin: EdgeInsets.all(16),
           width: 600,
           child: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
