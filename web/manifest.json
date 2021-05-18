@@ -1,11 +1,11 @@
 {
-    "name": "minimal_portfolio_webapp",
-    "short_name": "minimal_portfolio_webapp",
+    "name": "Harith Wickramasingha",
+    "short_name": "Harith Wickramasingha",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#FFFFFF",
+    "theme_color": "#FFFFFF",
+    "description": "My portfolio app",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
