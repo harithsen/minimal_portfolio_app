@@ -5,6 +5,7 @@ import 'package:minimal_portfolio_webapp/screens/components/top_bar.dart';
 import 'components/book_item.dart';
 
 class Books extends StatelessWidget {
+  static const routeName = '/favbooks';
   @override
   Widget build(BuildContext context) {
     return Scaffold(

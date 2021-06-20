@@ -36,10 +36,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => HomeScreen(),
-        '/about': (context) => AboutMe(),
-        '/projects': (context) => Projects(),
-        '/books': (context) => Books(),
+        HomeScreen.routeName: (context) => HomeScreen(),
+        AboutMe.routeName: (context) => AboutMe(),
+        Projects.routeName: (context) => Projects(),
+        Books.routeName: (context) => Books(),
       },
     );
   }

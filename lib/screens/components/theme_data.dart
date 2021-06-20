@@ -17,6 +17,7 @@ class ThemeProvider with ChangeNotifier {
   }
 }
 
+//light theme is dark theme and vice versa
 final lightTheme = ThemeData(
   appBarTheme: AppBarTheme(color: Colors.white12),
   brightness: Brightness.dark,
@@ -31,7 +32,10 @@ final lightTheme = ThemeData(
     headline5: GoogleFonts.aBeeZee(
         color: Colors.white, fontWeight: FontWeight.w900, letterSpacing: 1.5),
     headline6: GoogleFonts.aBeeZee(
-      color: Colors.blue,
+      color: Colors.white,
+      fontSize: 18,
+      fontWeight: FontWeight.bold,
+      letterSpacing: 1,
     ),
     bodyText1: GoogleFonts.aBeeZee(
         fontSize: 14,
@@ -66,7 +70,10 @@ final darkTheme = ThemeData(
     headline5: GoogleFonts.aBeeZee(
         color: Colors.black87, fontWeight: FontWeight.w900, letterSpacing: 1.5),
     headline6: GoogleFonts.aBeeZee(
-      color: Colors.blue,
+      color: Colors.black87,
+      fontSize: 18,
+      fontWeight: FontWeight.bold,
+      letterSpacing: 1,
     ),
     bodyText1: GoogleFonts.aBeeZee(
         fontSize: 14,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:minimal_portfolio_webapp/data/books_brain.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:expandable/expandable.dart';
 
 class BookItems extends StatelessWidget {
   launchURL(String url) async {
@@ -31,7 +32,10 @@ class BookItems extends StatelessWidget {
                 child: Text(
                   BooksBrain().booksBank[index].heading,
                   textAlign: TextAlign.left,
-                  style: Theme.of(context).textTheme.bodyText1,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyText1
+                      .copyWith(color: Colors.blue),
                 ),
               ),
               Text(
@@ -39,14 +43,31 @@ class BookItems extends StatelessWidget {
                 textAlign: TextAlign.left,
                 style: Theme.of(context).textTheme.bodyText2,
               ),
-              TextButton.icon(
-                onPressed: () =>
-                    launchURL(BooksBrain().booksBank[index].buyURL),
-                icon: Icon(Icons.arrow_right),
-                label: Text("Buy Book"),
+              BooksBrain().booksBank[index].keytakeaway.length > 0
+                  ? Padding(
+                      padding: const EdgeInsets.only(top: 8),
+                      child: ExpansionTile(
+                        childrenPadding: EdgeInsets.all(8),
+                        title: Text("Key Takeaway",
+                            style: Theme.of(context).textTheme.bodyText1),
+                        expandedAlignment: Alignment.centerLeft,
+                        children: [
+                          Text(BooksBrain().booksBank[index].keytakeaway),
+                        ],
+                      ),
+                    )
+                  : Container(),
+              Padding(
+                padding: const EdgeInsets.only(left: 8, top: 8),
+                child: TextButton.icon(
+                  onPressed: () =>
+                      launchURL(BooksBrain().booksBank[index].buyURL),
+                  icon: Icon(Icons.arrow_right),
+                  label: Text("Buy Book"),
+                ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 4, bottom: 8),
+                padding: const EdgeInsets.only(top: 0, bottom: 30),
                 child: Divider(),
               ),
             ],

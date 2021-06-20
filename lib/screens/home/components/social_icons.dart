@@ -45,20 +45,20 @@ class SocialIcons extends StatelessWidget {
                   launchURL("https://www.linkedin.com/in/harithwick/");
                 }),
           ),
-          Container(
-            margin: EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.white,
-            ),
-            child: IconButton(
-                icon: Image.asset(
-                  'assets/emojis/gmail.png',
-                ),
-                onPressed: () {
-                  launchURL("mailto:harithsen@gmail.com");
-                }),
-          ),
+          // Container(
+          //   margin: EdgeInsets.all(8),
+          //   decoration: BoxDecoration(
+          //     shape: BoxShape.circle,
+          //     color: Colors.white,
+          //   ),
+          //   child: IconButton(
+          //       icon: Image.asset(
+          //         'assets/emojis/gmail.png',
+          //       ),
+          //       onPressed: () {
+          //         launchURL("mailto:harithsen@gmail.com");
+          //       }),
+          // ),
           Container(
             margin: EdgeInsets.all(8),
             decoration: BoxDecoration(

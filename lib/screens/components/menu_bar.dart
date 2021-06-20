@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'package:minimal_portfolio_webapp/screens/about/about.dart';
+import 'package:minimal_portfolio_webapp/screens/books/books.dart';
+import 'package:minimal_portfolio_webapp/screens/projects/projects.dart';
 import 'menu_item.dart';
 
 class MenuBar extends StatelessWidget {
@@ -24,7 +26,7 @@ class MenuBar extends StatelessWidget {
                 iconPath: 'assets/emojis/about.png',
                 navPath: () {
                   Navigator.pop(context);
-                  Navigator.pushNamed(context, '/about');
+                  Navigator.pushNamed(context, AboutMe.routeName);
                 },
               ),
               MenuItem(
@@ -32,7 +34,7 @@ class MenuBar extends StatelessWidget {
                 iconPath: 'assets/emojis/rocket.png',
                 navPath: () {
                   Navigator.pop(context);
-                  Navigator.pushNamed(context, '/projects');
+                  Navigator.pushNamed(context, Projects.routeName);
                 },
               ),
               MenuItem(
@@ -40,7 +42,7 @@ class MenuBar extends StatelessWidget {
                 iconPath: 'assets/emojis/book.png',
                 navPath: () {
                   Navigator.pop(context);
-                  Navigator.pushNamed(context, '/books');
+                  Navigator.pushNamed(context, Books.routeName);
                 },
               ),
             ],

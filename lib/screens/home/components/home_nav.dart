@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:minimal_portfolio_webapp/screens/about/about.dart';
+import 'package:minimal_portfolio_webapp/screens/books/books.dart';
+import 'package:minimal_portfolio_webapp/screens/projects/projects.dart';
 
 class HomeNav extends StatelessWidget {
   const HomeNav({
@@ -20,7 +23,7 @@ class HomeNav extends StatelessWidget {
                       RoundedRectangleBorder(borderRadius: BorderRadius.zero),
                 ),
                 onPressed: () {
-                  Navigator.pushNamed(context, '/about');
+                  Navigator.pushNamed(context, AboutMe.routeName);
                 },
                 label: Text("About Me"),
                 icon: Image.asset(
@@ -37,7 +40,7 @@ class HomeNav extends StatelessWidget {
                       RoundedRectangleBorder(borderRadius: BorderRadius.zero),
                 ),
                 onPressed: () {
-                  Navigator.pushNamed(context, '/projects');
+                  Navigator.pushNamed(context, Projects.routeName);
                 },
                 label: Text("Projects"),
                 icon: Image.asset(
@@ -53,7 +56,7 @@ class HomeNav extends StatelessWidget {
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
           ),
           onPressed: () {
-            Navigator.pushNamed(context, '/books');
+            Navigator.pushNamed(context, Books.routeName);
           },
           label: Text("Fav Books"),
           icon: Image.asset(

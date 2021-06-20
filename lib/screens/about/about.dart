@@ -4,6 +4,8 @@ import 'package:minimal_portfolio_webapp/screens/components/sub_heading.dart';
 import 'package:minimal_portfolio_webapp/screens/components/top_bar.dart';
 
 class AboutMe extends StatelessWidget {
+  static const routeName = '/about';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +30,10 @@ class AboutMe extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodyText2,
                 ),
                 SizedBox(
-                  height: 30,
+                  height: 15,
+                ),
+                SizedBox(
+                  height: 15,
                 ),
               ],
             ),

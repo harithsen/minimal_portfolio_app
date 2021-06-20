@@ -17,6 +17,7 @@ dependencies:
   emojis: ^0.9.3
   url_launcher: ^6.0.3
   url_strategy: ^0.2.0
+  expandable: ^5.0.1
 
 dev_dependencies:
   flutter_test:

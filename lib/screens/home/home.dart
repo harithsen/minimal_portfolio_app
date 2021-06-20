@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:minimal_portfolio_webapp/screens/components/top_bar.dart';
+import 'package:minimal_portfolio_webapp/screens/home/components/blog.dart';
 import 'components/home_nav.dart';
 import 'components/social_icons.dart';
 
 class HomeScreen extends StatelessWidget {
+  static const routeName = '/';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,7 +72,11 @@ class HomeScreen extends StatelessWidget {
             HomeNav(),
             SocialIcons(),
             SizedBox(
-              height: 30,
+              height: 15,
+            ),
+            Blog(),
+            SizedBox(
+              height: 15,
             )
           ],
         ),

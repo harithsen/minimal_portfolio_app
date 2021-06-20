@@ -4,6 +4,19 @@ import 'package:flutter/material.dart';
 class ProjectsBrain {
   List<Project> projectsBank = [
     Project(
+        heading: "Rinkeby Faucet",
+        disc: "A faucet to request Eth for development in the Rinkeby Network",
+        imagePath: 'assets/images/eth.png',
+        tools: [
+          ["React", Colors.red],
+          ["Web3", Colors.blueAccent],
+          ["Solidity", Colors.greenAccent],
+        ],
+        appStore: null,
+        playStore: null,
+        website: null,
+        comingSoon: true),
+    Project(
         heading: "Snapps Bookmark Manager",
         disc:
             "I constantly bookmark websites and find myself struggling to keep them organised. I made Snapps that turns your Chrome New Tab into an ultimate bookmark manager. Simple, light weight and easy to use bookmark manager.",
