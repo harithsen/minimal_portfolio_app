@@ -24,7 +24,7 @@ class BookItems extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                  margin: EdgeInsets.only(top: 4),
+                  margin: EdgeInsets.symmetric(vertical: 4),
                   width: 80,
                   child: Image.asset(BooksBrain().booksBank[index].imagePath)),
               Padding(
@@ -58,7 +58,7 @@ class BookItems extends StatelessWidget {
                     )
                   : Container(),
               Padding(
-                padding: const EdgeInsets.only(left: 8, top: 8),
+                padding: const EdgeInsets.only(left: 8, top: 8, right: 8),
                 child: TextButton.icon(
                   onPressed: () =>
                       launchURL(BooksBrain().booksBank[index].buyURL),

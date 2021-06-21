@@ -13,18 +13,20 @@ class Books extends StatelessWidget {
       body: Align(
         alignment: Alignment.topCenter,
         child: Container(
-          margin: EdgeInsets.all(16),
+          margin: EdgeInsets.symmetric(horizontal: 16),
           width: 600,
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                SizedBox(height: 16),
                 MenuBar(),
                 SubHeading(
                   label: "Favourite Books",
                 ),
-                BookItems()
+                BookItems(),
+                SizedBox(height: 16)
               ],
             ),
           ),

@@ -72,12 +72,12 @@ class HomeScreen extends StatelessWidget {
             HomeNav(),
             SocialIcons(),
             SizedBox(
-              height: 15,
+              height: 30,
             ),
-            Blog(),
-            SizedBox(
-              height: 15,
-            )
+            // Blog(),
+            // SizedBox(
+            //   height: 15,
+            // )
           ],
         ),
       ),
