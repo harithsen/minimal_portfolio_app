@@ -67,7 +67,7 @@ class BookItems extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 0, bottom: 30),
+                padding: const EdgeInsets.only(top: 30, bottom: 30),
                 child: Divider(),
               ),
             ],

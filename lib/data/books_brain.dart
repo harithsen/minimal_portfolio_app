@@ -25,7 +25,7 @@ class BooksBrain {
       disc:
           "Notes on start ups and how to build the future through the eyes of Peter Thiel.",
       imagePath: "assets/images/peter.jpg",
-      keytakeaway: "asda",
+      keytakeaway: "",
       buyURL:
           "https://www.amazon.com.au/Zero-One-Blake-Masters/dp/0753555204/ref=asc_df_0753555204/?tag=googleshopdsk-22&linkCode=df0&hvadid=341744909748&hvpos=&hvnetw=g&hvrand=16816700077260753219&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9071864&hvtargid=pla-524041164953&psc=1",
     ),

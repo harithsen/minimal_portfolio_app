@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:minimal_portfolio_webapp/screens/about/about.dart';
+import 'package:minimal_portfolio_webapp/screens/blog/blog.dart';
 import 'package:minimal_portfolio_webapp/screens/books/books.dart';
 import 'package:minimal_portfolio_webapp/screens/projects/projects.dart';
 import 'menu_item.dart';
@@ -27,6 +28,14 @@ class MenuBar extends StatelessWidget {
                 navPath: () {
                   Navigator.pop(context);
                   Navigator.pushNamed(context, AboutMe.routeName);
+                },
+              ),
+              MenuItem(
+                name: "Blog",
+                iconPath: 'assets/emojis/coding.png',
+                navPath: () {
+                  Navigator.pop(context);
+                  Navigator.pushNamed(context, Blog.routeName);
                 },
               ),
               MenuItem(

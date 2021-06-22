@@ -3,10 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:minimal_portfolio_webapp/screens/about/about.dart';
 import 'package:minimal_portfolio_webapp/screens/books/books.dart';
 import 'package:minimal_portfolio_webapp/screens/components/theme_data.dart';
-import 'package:minimal_portfolio_webapp/screens/home/components/blog.dart';
-import 'package:minimal_portfolio_webapp/screens/home/components/blog_article.dart';
 import 'package:minimal_portfolio_webapp/screens/home/home.dart';
 import 'package:minimal_portfolio_webapp/screens/projects/projects.dart';
+import 'package:minimal_portfolio_webapp/screens/blog/blog.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_strategy/url_strategy.dart';
@@ -42,7 +41,8 @@ class MyApp extends StatelessWidget {
         AboutMe.routeName: (context) => AboutMe(),
         Projects.routeName: (context) => Projects(),
         Books.routeName: (context) => Books(),
-        BlogArticle.routeName: (context) => BlogArticle(),
+        //BlogArticle.routeName: (context) => BlogArticle(),
+        Blog.routeName: (context) => Blog(),
       },
     );
   }

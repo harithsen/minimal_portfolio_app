@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:minimal_portfolio_webapp/screens/components/top_bar.dart';
-import 'package:minimal_portfolio_webapp/screens/home/components/blog.dart';
+import 'package:minimal_portfolio_webapp/screens/blog/blog.dart';
 import 'components/home_nav.dart';
 import 'components/social_icons.dart';
 

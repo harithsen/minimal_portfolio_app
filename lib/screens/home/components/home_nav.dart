@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:minimal_portfolio_webapp/screens/about/about.dart';
+import 'package:minimal_portfolio_webapp/screens/blog/blog.dart';
 import 'package:minimal_portfolio_webapp/screens/books/books.dart';
 import 'package:minimal_portfolio_webapp/screens/projects/projects.dart';
 
@@ -28,6 +29,23 @@ class HomeNav extends StatelessWidget {
                 label: Text("About Me"),
                 icon: Image.asset(
                   'assets/emojis/about.png',
+                  width: 16,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: OutlinedButton.icon(
+                style: OutlinedButton.styleFrom(
+                  shape:
+                      RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+                ),
+                onPressed: () {
+                  Navigator.pushNamed(context, Blog.routeName);
+                },
+                label: Text("Blog"),
+                icon: Image.asset(
+                  'assets/emojis/coding.png',
                   width: 16,
                 ),
               ),

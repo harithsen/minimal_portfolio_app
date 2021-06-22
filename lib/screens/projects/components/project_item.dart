@@ -33,7 +33,10 @@ class Project extends StatelessWidget {
               child: Text(
                 ProjectsBrain().projectsBank[index].heading,
                 textAlign: TextAlign.left,
-                style: Theme.of(context).textTheme.bodyText1,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyText1
+                    .copyWith(color: Colors.blue),
               ),
             ),
             Padding(
@@ -92,7 +95,7 @@ class Project extends StatelessWidget {
             ),
             ProjectsBrain().projectsBank[index].comingSoon
                 ? Padding(
-                    padding: EdgeInsets.only(top: 8, bottom: 16),
+                    padding: EdgeInsets.only(top: 8),
                     child: Chip(
                       backgroundColor: Colors.grey,
                       labelPadding:
@@ -104,7 +107,7 @@ class Project extends StatelessWidget {
                     ))
                 : Container(),
             Padding(
-              padding: const EdgeInsets.only(top: 0, bottom: 30),
+              padding: const EdgeInsets.only(top: 30, bottom: 30),
               child: Divider(),
             ),
           ],
