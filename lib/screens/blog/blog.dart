@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:minimal_portfolio_webapp/data/blog_brain.dart';
+import 'package:minimal_portfolio_webapp/data/books_brain.dart';
 import 'package:minimal_portfolio_webapp/screens/components/menu_bar.dart';
 import 'package:minimal_portfolio_webapp/screens/components/sub_heading.dart';
 import 'package:minimal_portfolio_webapp/screens/components/top_bar.dart';
@@ -21,109 +23,172 @@ class Blog extends StatefulWidget {
 }
 
 class BlogState extends State<Blog> {
-  static const String FEED_URL = 'https://medium.com/feed/@harithwick';
-  RssFeed _feed;
-  String _title;
-  static const String loadingFeedMsg = 'Loading Feed...';
-  static const String feedLoadErrorMsg = 'Error Loading Feed.';
-  static const String feedOpenErrorMsg = 'Error Opening Feed.';
-  static const String placeholderImg = 'images/no_image.png';
-  GlobalKey<RefreshIndicatorState> _refreshKey;
+  // static const String FEED_URL = 'https://medium.com/feed/@harithwick';
+  // RssFeed _feed;
+  // String _title;
+  // static const String loadingFeedMsg = 'Loading Feed...';
+  // static const String feedLoadErrorMsg = 'Error Loading Feed.';
+  // static const String feedOpenErrorMsg = 'Error Opening Feed.';
+  // static const String placeholderImg = 'images/no_image.png';
+  // GlobalKey<RefreshIndicatorState> _refreshKey;
 
-  updateTitle(title) {
-    setState(() {
-      _title = title;
-    });
-  }
+  // updateTitle(title) {
+  //   setState(() {
+  //     _title = title;
+  //   });
+  // }
 
-  updateFeed(feed) {
-    setState(() {
-      _feed = feed;
-    });
-  }
+  // updateFeed(feed) {
+  //   setState(() {
+  //     _feed = feed;
+  //   });
+  // }
 
-  Future<void> openFeed(String url) async {
-    if (await canLaunch(url)) {
-      await launch(
-        url,
-        forceSafariVC: true,
-        forceWebView: false,
-      );
-      return;
-    }
-    updateTitle(feedOpenErrorMsg);
-  }
+  // Future<void> openFeed(String url) async {
+  //   if (await canLaunch(url)) {
+  //     await launch(
+  //       url,
+  //       forceSafariVC: true,
+  //       forceWebView: false,
+  //     );
+  //     return;
+  //   }
+  //   updateTitle(feedOpenErrorMsg);
+  // }
 
-  load() async {
-    updateTitle(loadingFeedMsg);
-    loadFeed().then((result) {
-      if (null == result || result.toString().isEmpty) {
-        updateTitle(feedLoadErrorMsg);
-        return;
-      }
-      //print(result.items[0].media.title);
-      updateFeed(result);
-      updateTitle(_feed.title);
-    });
-  }
+  // load() async {
+  //   updateTitle(loadingFeedMsg);
+  //   loadFeed().then((result) {
+  //     if (null == result || result.toString().isEmpty) {
+  //       updateTitle(feedLoadErrorMsg);
+  //       return;
+  //     }
+  //     //print(result.items[0].media.title);
+  //     updateFeed(result);
+  //     updateTitle(_feed.title);
+  //   });
+  // }
 
-  Future<RssFeed> loadFeed() async {
-    try {
-      final client = http.Client();
-      final response = await client.get(Uri.parse(FEED_URL));
-      return RssFeed.parse(response.body);
-    } catch (e) {
-      //
-    }
-    return null;
-  }
+  // Future<RssFeed> loadFeed() async {
+  //   try {
+  //     final client = http.Client();
+  //     final response = await client.get(Uri.parse(FEED_URL));
+  //     return RssFeed.parse(response.body);
+  //   } catch (e) {
+  //     //
+  //   }
+  //   return null;
+  // }
 
-  @override
-  void initState() {
-    super.initState();
-    _refreshKey = GlobalKey<RefreshIndicatorState>();
-    updateTitle(widget.title);
-    load();
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   _refreshKey = GlobalKey<RefreshIndicatorState>();
+  //   updateTitle(widget.title);
+  //   load();
+  // }
 
-  list() {
+  // list() {
+  //   return ListView.separated(
+  //     separatorBuilder: (BuildContext context, int index) => const SizedBox(
+  //       height: 30,
+  //     ),
+  //     shrinkWrap: true,
+  //     itemCount: _feed.items.length,
+  //     itemBuilder: (BuildContext context, int index) {
+  //       final item = _feed.items[index];
+  //       return InkWell(
+  //         onTap: () => openFeed(item.link),
+  //         child: Column(
+  //           children: [
+  //             CachedNetworkImage(
+  //               height: 300,
+  //               width: 600,
+  //               fit: BoxFit.cover,
+  //               imageUrl: item.content.value
+  //                   .split("src=")[1]
+  //                   .split(" ")[0]
+  //                   .replaceAll('"', ""),
+  //               placeholder: (context, url) => CircularProgressIndicator(),
+  //               errorWidget: (context, url, error) => Icon(Icons.error),
+  //             ),
+  //             ListTile(
+  //               hoverColor: Colors.transparent,
+  //               title: Text(
+  //                 item.title,
+  //                 style: Theme.of(context).textTheme.bodyText1,
+  //               ),
+  //               subtitle: Text(DateFormat('yMMMMd').format(item.pubDate)),
+  //               trailing: Icon(
+  //                 Icons.keyboard_arrow_right,
+  //                 color: Colors.grey,
+  //                 size: 30.0,
+  //               ),
+  //               contentPadding: EdgeInsets.all(5.0),
+  //               onTap: () => openFeed(item.link),
+  //             ),
+  //           ],
+  //         ),
+  //       );
+  //     },
+  //   );
+  // }
+
+  body() {
     return ListView.separated(
       separatorBuilder: (BuildContext context, int index) => const SizedBox(
         height: 30,
       ),
       shrinkWrap: true,
-      itemCount: _feed.items.length,
+      itemCount: BlogBrain().blogBank.length,
       itemBuilder: (BuildContext context, int index) {
-        final item = _feed.items[index];
+        final blog = BlogBrain().blogBank[index];
         return InkWell(
-          onTap: () => openFeed(item.link),
+          onTap: () => launchURL(blog.link),
           child: Column(
             children: [
-              CachedNetworkImage(
-                height: 300,
-                width: 600,
-                fit: BoxFit.cover,
-                imageUrl: item.content.value
-                    .split("src=")[1]
-                    .split(" ")[0]
-                    .replaceAll('"', ""),
-                placeholder: (context, url) => CircularProgressIndicator(),
-                errorWidget: (context, url, error) => Icon(Icons.error),
+              Stack(
+                children: [
+                  Image(
+                    height: 300,
+                    width: 600,
+                    fit: BoxFit.cover,
+                    image: AssetImage(blog.image),
+                  ),
+                  Row(
+                    children: BlogBrain().blogBank[index].tags.map((String e) {
+                      return Padding(
+                        padding: const EdgeInsets.only(left: 4, top: 4),
+                        child: Chip(
+                            backgroundColor: Colors.white,
+                            label: Text(
+                              e,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyText2
+                                  .copyWith(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold),
+                            )),
+                      );
+                    }).toList(),
+                  )
+                ],
               ),
               ListTile(
                 hoverColor: Colors.transparent,
                 title: Text(
-                  item.title,
+                  blog.title,
                   style: Theme.of(context).textTheme.bodyText1,
                 ),
-                subtitle: Text(DateFormat('yMMMMd').format(item.pubDate)),
+                subtitle: Text(blog.date),
                 trailing: Icon(
                   Icons.keyboard_arrow_right,
                   color: Colors.grey,
                   size: 30.0,
                 ),
                 contentPadding: EdgeInsets.all(5.0),
-                onTap: () => openFeed(item.link),
+                onTap: () => launchURL(blog.link),
               ),
             ],
           ),
@@ -132,22 +197,30 @@ class BlogState extends State<Blog> {
     );
   }
 
-  isFeedEmpty() {
-    return null == _feed || null == _feed.items;
+  // isFeedEmpty() {
+  //   return null == _feed || null == _feed.items;
+  // }
+
+  launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 
-  body() {
-    return isFeedEmpty()
-        ? Center(
-            child: Container(
-                width: 50, height: 50, child: CircularProgressIndicator()),
-          )
-        : RefreshIndicator(
-            key: _refreshKey,
-            child: list(),
-            onRefresh: () => load(),
-          );
-  }
+  // body() {
+  //   return isFeedEmpty()
+  //       ? Center(
+  //           child: Container(
+  //               width: 50, height: 50, child: CircularProgressIndicator()),
+  //         )
+  //       : RefreshIndicator(
+  //           key: _refreshKey,
+  //           child: list(),
+  //           onRefresh: () => load(),
+  //         );
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -169,7 +242,7 @@ class BlogState extends State<Blog> {
                   label: "Blog Articles",
                 ),
                 body(),
-                SizedBox(height: 16)
+                SizedBox(height: 30)
               ],
             ),
           ),
