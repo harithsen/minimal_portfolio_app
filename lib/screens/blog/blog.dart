@@ -9,6 +9,7 @@ import 'package:http/http.dart' as http;
 import 'package:url_launcher/url_launcher.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:intl/intl.dart';
+import 'package:timelines/timelines.dart';
 
 class Blog extends StatefulWidget {
   static const routeName = "/blog";
@@ -143,55 +144,22 @@ class BlogState extends State<Blog> {
       itemCount: BlogBrain().blogBank.length,
       itemBuilder: (BuildContext context, int index) {
         final blog = BlogBrain().blogBank[index];
-        return InkWell(
-          onTap: () => launchURL(blog.link),
-          child: Column(
-            children: [
-              Stack(
-                children: [
-                  Image(
-                    height: 300,
-                    width: 600,
-                    fit: BoxFit.cover,
-                    image: AssetImage(blog.image),
-                  ),
-                  Row(
-                    children: BlogBrain().blogBank[index].tags.map((String e) {
-                      return Padding(
-                        padding: const EdgeInsets.only(left: 4, top: 4),
-                        child: Chip(
-                            backgroundColor: Colors.white,
-                            label: Text(
-                              e,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyText2
-                                  .copyWith(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold),
-                            )),
-                      );
-                    }).toList(),
-                  )
-                ],
-              ),
-              ListTile(
-                hoverColor: Colors.transparent,
-                title: Text(
-                  blog.title,
-                  style: Theme.of(context).textTheme.bodyText1,
-                ),
-                subtitle: Text(blog.date),
-                trailing: Icon(
-                  Icons.keyboard_arrow_right,
-                  color: Colors.grey,
-                  size: 30.0,
-                ),
-                contentPadding: EdgeInsets.all(5.0),
-                onTap: () => launchURL(blog.link),
-              ),
-            ],
+        return ListTile(
+          dense: true,
+          title: Text(
+            blog.title,
+            style: Theme.of(context)
+                .textTheme
+                .bodyText1
+                .copyWith(color: Colors.blue),
           ),
+          subtitle: Text(blog.date),
+          trailing: Icon(
+            Icons.keyboard_arrow_right,
+            color: Colors.grey,
+          ),
+          contentPadding: EdgeInsets.all(5.0),
+          onTap: () => launchURL(blog.link),
         );
       },
     );

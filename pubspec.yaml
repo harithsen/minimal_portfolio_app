@@ -21,6 +21,7 @@ dependencies:
   webfeed: ^0.7.0
   cached_network_image: ^3.0.0
   http: ^0.13.3
+  timelines: ^0.1.0
 
 dev_dependencies:
   flutter_test:
@@ -32,4 +33,4 @@ flutter:
     - assets/images/
     - assets/emojis/
     - assets/emojis/facebook.png
-    - assets/images/blog
+    - assets/images/blog/
