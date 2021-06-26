@@ -10,7 +10,7 @@ class BlogBrain {
         tags: ["Ethereum", "Blockchain"],
         date: "June 23rd 2021",
         link:
-            "https://harithwick.medium.com/secure-access-service-edge-sase-the-vpn-2-0-2ecdc29bc334"),
+            "https://harithwick.medium.com/what-is-wei-ethereum-e45cf579081b"),
     BlogPosts(
         title:
             "How to launch a WordPress website on Amazon Web Services (AWS) using AWS LightSail",
@@ -25,6 +25,6 @@ class BlogBrain {
         tags: ["VPN", "SASE", "Cloud Security"],
         date: "June 23rd 2021",
         link:
-            "https://harithwick.medium.com/what-is-wei-ethereum-e45cf579081b"),
+            "https://harithwick.medium.com/secure-access-service-edge-sase-the-vpn-2-0-2ecdc29bc334"),
   ];
 }

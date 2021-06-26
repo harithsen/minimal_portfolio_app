@@ -6,9 +6,12 @@ import 'package:minimal_portfolio_webapp/screens/components/theme_data.dart';
 import 'package:minimal_portfolio_webapp/screens/home/home.dart';
 import 'package:minimal_portfolio_webapp/screens/projects/projects.dart';
 import 'package:minimal_portfolio_webapp/screens/blog/blog.dart';
+import 'package:minimal_portfolio_webapp/services/dribbble_api.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_strategy/url_strategy.dart';
+
+import 'data/shots.dart';
 
 void main() async {
   setPathUrlStrategy();
@@ -26,7 +29,12 @@ void main() async {
           ));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
