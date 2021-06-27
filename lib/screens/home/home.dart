@@ -1,14 +1,15 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:minimal_portfolio_webapp/data/shots.dart';
 import 'package:minimal_portfolio_webapp/screens/components/top_bar.dart';
-import 'package:minimal_portfolio_webapp/screens/blog/blog.dart';
 import 'package:minimal_portfolio_webapp/services/dribbble_api.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'components/home_nav.dart';
 import 'components/social_icons.dart';
 import '../../data/shots.dart';
+import 'package:intl/intl.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:rive/rive.dart' as rive;
 
 class HomeScreen extends StatefulWidget {
   static const routeName = '/';
@@ -19,11 +20,9 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<Shots> dribbbleData = <Shots>[];
-  Shots newshot;
   @override
   void initState() {
     WidgetsFlutterBinding.ensureInitialized();
-
     super.initState();
     this.getData();
   }
@@ -35,50 +34,85 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       dribbbleData = shots;
     });
-
-    print(dribbbleData[0].images.hidpi);
-    // print(dribbbleData[0].id);
   }
 
   isFeedEmpty() {
     return dribbbleData.isEmpty;
   }
 
-  double opacityLevel = 1.0;
-
-  void changeOpacity() {}
-
   showImages() {
     return GridView.builder(
+        physics: NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 300,
+            maxCrossAxisExtent: 600,
             childAspectRatio: 4 / 3,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10),
+            crossAxisSpacing: 20,
+            mainAxisSpacing: 20),
         itemCount: dribbbleData.length,
         itemBuilder: (BuildContext ctx, index) {
           return InkWell(
-            onHover: (e) {
-              setState(() => opacityLevel = opacityLevel == 0 ? 1.0 : 0.0);
-            },
             onTap: () {
               launchURL(dribbbleData[index].htmlUrl);
             },
-            child: AnimatedOpacity(
-              opacity: opacityLevel,
-              duration: const Duration(seconds: 3),
-              child: Container(
-                  decoration: BoxDecoration(
+            child: Container(
+              decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                image: DecorationImage(
-                    image: NetworkImage(dribbbleData[index].images.hidpi),
-                    fit: BoxFit.cover),
-              )),
+              ),
+              child: GridTile(
+                  child: CachedNetworkImage(
+                    imageUrl: dribbbleData[index].images.hidpi,
+                    placeholder: (context, url) => Center(
+                      child: Container(
+                          height: 5,
+                          width: double.infinity,
+                          child: LinearProgressIndicator()),
+                    ),
+                    errorWidget: (context, url, error) => Icon(Icons.error),
+                  ),
+                  footer: Container(
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          stops: [0, 0.8, 1],
+                          colors: [
+                            Colors.transparent,
+                            Colors.black87,
+                            Colors.black,
+                          ],
+                        ),
+                      ),
+                      padding: EdgeInsets.all(8),
+                      child: Text(
+                        dribbbleData[index].title,
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      ))),
             ),
           );
         });
   }
+
+  // Column(
+  //             children: [
+  //               Text(dribbbleData[index].title),
+  //               Container(
+  //                   decoration: BoxDecoration(
+  //                 borderRadius: BorderRadius.circular(10),
+  //                 image: DecorationImage(
+  //                     image: NetworkImage(dribbbleData[index].images.hidpi),
+  //                     fit: BoxFit.cover),
+  //               )),
+  //               ListTile(
+  //                 hoverColor: Colors.transparent,
+  //                 title: Text(dribbbleData[index].title),
+  //                 subtitle: Text(
+  //                     DateFormat.yMd().format(dribbbleData[index].publishedAt)),
+  //                 trailing: Icon(Icons.arrow_forward_outlined),
+  //               )
+  //             ],
+  //           )
 
   body() {
     return isFeedEmpty()
@@ -94,6 +128,13 @@ class _HomeScreenState extends State<HomeScreen> {
         : showImages();
   }
 
+  // Container(
+  //   height: 400,
+  //   width: 400,
+  //   child: rive.RiveAnimation.asset(
+  //     'animations/poison_loader.riv',
+  //   )),
+
   launchURL(String url) async {
     if (await canLaunch(url)) {
       await launch(url);
@@ -104,13 +145,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    //print(dribbbleData[0].id);
     return Scaffold(
-      appBar: TopBar(),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            //SliverAppBar(),
+            TopBar(),
             SizedBox(
               height: 50,
             ),
@@ -139,13 +180,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 )
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                "I'm Harith Wickramasingha",
-                style: Theme.of(context).textTheme.headline5,
-              ),
-            ),
+
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
@@ -168,21 +203,19 @@ class _HomeScreenState extends State<HomeScreen> {
             HomeNav(),
             SocialIcons(),
             SizedBox(
-              height: 30,
+              height: 40,
             ),
             Padding(
               padding: const EdgeInsets.only(bottom: 16),
               child: Text(
-                "Design",
-                style: GoogleFonts.pacifico(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
+                "- Design -",
+                style: GoogleFonts.rockSalt(
+                    fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 16),
-              width: 900,
+              width: 1200,
               child: body(),
             ),
             SizedBox(

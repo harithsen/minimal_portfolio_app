@@ -22,6 +22,8 @@ dependencies:
   cached_network_image: ^3.0.0
   http: ^0.13.3
   timelines: ^0.1.0
+  intl: ^0.17.0
+  rive: ^0.7.22
 
 dev_dependencies:
   flutter_test:
@@ -34,3 +36,4 @@ flutter:
     - assets/emojis/
     - assets/emojis/facebook.png
     - assets/images/blog/
+    - assets/animations/
