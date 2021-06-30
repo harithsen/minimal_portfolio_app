@@ -5,6 +5,14 @@ import 'blog_obj.dart';
 class BlogBrain {
   List<BlogPosts> blogBank = [
     BlogPosts(
+        title:
+            "Flutter Web “Potion” Initial Loading Screen Animation Using Lottie",
+        image: "assets/images/blog/wei.jpg",
+        tags: ["Lottie", "Flutter", "Animations"],
+        date: "June 27rd 2021",
+        link:
+            "https://harithwick.medium.com/flutter-web-potion-initial-loading-screen-animation-using-lottie-b8f77bf0d5e2"),
+    BlogPosts(
         title: "What is WEI in the Ethereum Blockchain?",
         image: "assets/images/blog/wei.jpg",
         tags: ["Ethereum", "Blockchain"],

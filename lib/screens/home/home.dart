@@ -118,12 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return isFeedEmpty()
         ? Center(
             child: Container(
-                width: 50,
-                height: 50,
-                child: CircularProgressIndicator(
-                  strokeWidth: 2,
-                  backgroundColor: Colors.blue,
-                )),
+                width: 50, height: 50, child: CircularProgressIndicator()),
           )
         : showImages();
   }
@@ -179,6 +174,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 )
               ],
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "I'm Harith Wickramasingha",
+                style: Theme.of(context).textTheme.headline5,
+                textAlign: TextAlign.center,
+              ),
             ),
 
             Padding(
