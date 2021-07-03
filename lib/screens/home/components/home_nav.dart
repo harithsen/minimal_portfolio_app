@@ -11,63 +11,24 @@ class HomeNav extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: OutlinedButton.icon(
-                style: OutlinedButton.styleFrom(
-                  shape:
-                      RoundedRectangleBorder(borderRadius: BorderRadius.zero),
-                ),
-                onPressed: () {
-                  Navigator.pushNamed(context, AboutMe.routeName);
-                },
-                label: Text("About Me"),
-                icon: Image.asset(
-                  'assets/emojis/about.png',
-                  width: 16,
-                ),
-              ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: OutlinedButton.icon(
+            style: OutlinedButton.styleFrom(
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: OutlinedButton.icon(
-                style: OutlinedButton.styleFrom(
-                  shape:
-                      RoundedRectangleBorder(borderRadius: BorderRadius.zero),
-                ),
-                onPressed: () {
-                  Navigator.pushNamed(context, Blog.routeName);
-                },
-                label: Text("Blog"),
-                icon: Image.asset(
-                  'assets/emojis/coding.png',
-                  width: 16,
-                ),
-              ),
+            onPressed: () {
+              Navigator.pushNamed(context, AboutMe.routeName);
+            },
+            label: Text("About Me"),
+            icon: Image.asset(
+              'assets/emojis/about.png',
+              width: 16,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: OutlinedButton.icon(
-                style: OutlinedButton.styleFrom(
-                  shape:
-                      RoundedRectangleBorder(borderRadius: BorderRadius.zero),
-                ),
-                onPressed: () {
-                  Navigator.pushNamed(context, Projects.routeName);
-                },
-                label: Text("Projects"),
-                icon: Image.asset(
-                  'assets/emojis/rocket.png',
-                  width: 16,
-                ),
-              ),
-            )
-          ],
+          ),
         ),
         OutlinedButton.icon(
           style: OutlinedButton.styleFrom(
@@ -82,6 +43,22 @@ class HomeNav extends StatelessWidget {
             width: 16,
           ),
         ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: OutlinedButton.icon(
+            style: OutlinedButton.styleFrom(
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+            ),
+            onPressed: () {
+              Navigator.pushNamed(context, Projects.routeName);
+            },
+            label: Text("Projects"),
+            icon: Image.asset(
+              'assets/emojis/rocket.png',
+              width: 16,
+            ),
+          ),
+        )
       ],
     );
   }

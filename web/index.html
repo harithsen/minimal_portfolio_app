@@ -38,13 +38,18 @@
 }
 
 
-    .loader {
-  width: 200px;
-  height: 200px;
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
 }
 
-body {
-  background-color: purple;
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
   </style>
@@ -52,8 +57,7 @@ body {
 <body>
 
   <div class="centered">
-    <div class="loader"><script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-      <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_PHgz6B.json"  background="transparent"  speed="1" loop  autoplay></lottie-player></div></div>
+    <div class="loader"></div></div>
 
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:

@@ -26,32 +26,22 @@ class MenuBar extends StatelessWidget {
                 name: "About Me",
                 iconPath: 'assets/emojis/about.png',
                 navPath: () {
-                  Navigator.pop(context);
-                  Navigator.pushNamed(context, AboutMe.routeName);
-                },
-              ),
-              MenuItem(
-                name: "Blog",
-                iconPath: 'assets/emojis/coding.png',
-                navPath: () {
-                  Navigator.pop(context);
-                  Navigator.pushNamed(context, Blog.routeName);
+                  Navigator.of(context).pushReplacementNamed(AboutMe.routeName);
                 },
               ),
               MenuItem(
                 name: "Projects",
                 iconPath: 'assets/emojis/rocket.png',
                 navPath: () {
-                  Navigator.pop(context);
-                  Navigator.pushNamed(context, Projects.routeName);
+                  Navigator.of(context)
+                      .pushReplacementNamed(Projects.routeName);
                 },
               ),
               MenuItem(
                 name: "Fav Books",
                 iconPath: 'assets/emojis/book.png',
                 navPath: () {
-                  Navigator.pop(context);
-                  Navigator.pushNamed(context, Books.routeName);
+                  Navigator.of(context).pushReplacementNamed(Books.routeName);
                 },
               ),
             ],

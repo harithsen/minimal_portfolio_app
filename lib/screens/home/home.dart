@@ -7,9 +7,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'components/home_nav.dart';
 import 'components/social_icons.dart';
 import '../../data/shots.dart';
-import 'package:intl/intl.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:rive/rive.dart' as rive;
 
 class HomeScreen extends StatefulWidget {
   static const routeName = '/';
@@ -25,6 +23,11 @@ class _HomeScreenState extends State<HomeScreen> {
     WidgetsFlutterBinding.ensureInitialized();
     super.initState();
     this.getData();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
   }
 
   void getData() async {
@@ -94,26 +97,6 @@ class _HomeScreenState extends State<HomeScreen> {
         });
   }
 
-  // Column(
-  //             children: [
-  //               Text(dribbbleData[index].title),
-  //               Container(
-  //                   decoration: BoxDecoration(
-  //                 borderRadius: BorderRadius.circular(10),
-  //                 image: DecorationImage(
-  //                     image: NetworkImage(dribbbleData[index].images.hidpi),
-  //                     fit: BoxFit.cover),
-  //               )),
-  //               ListTile(
-  //                 hoverColor: Colors.transparent,
-  //                 title: Text(dribbbleData[index].title),
-  //                 subtitle: Text(
-  //                     DateFormat.yMd().format(dribbbleData[index].publishedAt)),
-  //                 trailing: Icon(Icons.arrow_forward_outlined),
-  //               )
-  //             ],
-  //           )
-
   body() {
     return isFeedEmpty()
         ? Center(
@@ -122,13 +105,6 @@ class _HomeScreenState extends State<HomeScreen> {
           )
         : showImages();
   }
-//
-  // Container(
-  //   height: 400,
-  //   width: 400,
-  //   child: rive.RiveAnimation.asset(
-  //     'animations/poison_loader.riv',
-  //   )),
 
   launchURL(String url) async {
     if (await canLaunch(url)) {
@@ -145,7 +121,6 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            //SliverAppBar(),
             TopBar(),
             SizedBox(
               height: 50,
@@ -183,14 +158,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 textAlign: TextAlign.center,
               ),
             ),
-
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                height: 3,
-                width: 50,
-                color: Colors.blue,
-              ),
+            Container(
+              margin: const EdgeInsets.all(8.0),
+              height: 3,
+              width: 50,
+              color: Colors.blue,
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),

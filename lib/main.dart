@@ -10,7 +10,6 @@ import 'package:minimal_portfolio_webapp/services/dribbble_api.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_strategy/url_strategy.dart';
-
 import 'data/shots.dart';
 
 void main() async {
@@ -49,7 +48,6 @@ class _MyAppState extends State<MyApp> {
         AboutMe.routeName: (context) => AboutMe(),
         Projects.routeName: (context) => Projects(),
         Books.routeName: (context) => Books(),
-        //BlogArticle.routeName: (context) => BlogArticle(),
         Blog.routeName: (context) => Blog(),
       },
     );
