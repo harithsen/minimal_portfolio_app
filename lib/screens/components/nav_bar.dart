@@ -6,7 +6,7 @@ import 'package:minimal_portfolio_webapp/screens/home/home.dart';
 import 'package:minimal_portfolio_webapp/screens/projects/projects.dart';
 
 double collapsableHeight = 0.0;
-Color selected = Color(0xffffffff);
+Color selected = Colors.deepOrange;
 Color notSelected = Color(0xafffffff);
 
 class NavBar extends StatefulWidget {
@@ -29,7 +29,6 @@ class _NavBarState extends State<NavBar> {
           curve: Curves.ease,
           height: (width < 800.0) ? collapsableHeight : 0.0,
           width: double.infinity,
-          //color: Color(0xff121212),
           child: SingleChildScrollView(
             child: Column(
               children: navBarItems,
@@ -37,9 +36,7 @@ class _NavBarState extends State<NavBar> {
           ),
         ),
         Container(
-          //color: Color(0xff121212),
           height: 80.0,
-          //width: 1200,
           padding: EdgeInsets.symmetric(horizontal: 24.0),
           child: LayoutBuilder(builder: (context, constraints) {
             if (width < 800.0) {
@@ -156,7 +153,7 @@ class _NavBarItemState extends State<NavBarItem> {
         });
       },
       child: Material(
-        //color: Colors.transparent,
+        color: Colors.transparent,
         child: InkWell(
           splashColor: Colors.white60,
           onTap: () {
@@ -181,7 +178,7 @@ class _NavBarItemState extends State<NavBarItem> {
                   widget.text,
                   style: TextStyle(
                     fontSize: 16.0,
-                    //color: color,
+                    color: color,
                   ),
                 ),
               ],
