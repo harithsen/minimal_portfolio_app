@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:minimal_portfolio_webapp/data/books_brain.dart';
-import 'package:minimal_portfolio_webapp/screens/components/nav_bar.dart';
+import 'package:minimal_portfolio_webapp/widgets/nav_bar.dart';
 import 'package:minimal_portfolio_webapp/widgets/page_header.dart';
 import 'package:minimal_portfolio_webapp/widgets/url_launcher.dart';
 
 class Books extends StatelessWidget {
-  static const routeName = '/projects';
+  static const routeName = '/FavBooks';
 
   Widget _booksBody() {
     return Align(
@@ -83,7 +83,11 @@ class Books extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [NavBar(), PageHeader(label: "Projects"), _booksBody()],
+          children: [
+            NavBar(),
+            PageHeader(label: "Favourite Books"),
+            _booksBody()
+          ],
         ),
       ),
     );

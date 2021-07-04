@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:minimal_portfolio_webapp/data/projects_brain.dart';
-import 'package:minimal_portfolio_webapp/screens/components/nav_bar.dart';
+import 'package:minimal_portfolio_webapp/widgets/nav_bar.dart';
 import 'package:minimal_portfolio_webapp/widgets/page_header.dart';
 import 'package:minimal_portfolio_webapp/widgets/url_launcher.dart';
 

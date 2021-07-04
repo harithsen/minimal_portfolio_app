@@ -1,4 +1,4 @@
-import 'books_obj.dart';
+import 'package:minimal_portfolio_webapp/models/books_obj.dart';
 
 class BooksBrain {
   List<Book> booksBank = [

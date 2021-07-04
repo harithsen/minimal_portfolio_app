@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:minimal_portfolio_webapp/screens/components/theme_data.dart';
+import 'package:minimal_portfolio_webapp/widgets/theme_data.dart';
 
 class SwitchDarkLightMode extends StatelessWidget {
   const SwitchDarkLightMode({

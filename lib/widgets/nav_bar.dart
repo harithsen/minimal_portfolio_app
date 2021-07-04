@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:minimal_portfolio_webapp/screens/about/about.dart';
-import 'package:minimal_portfolio_webapp/screens/books/books.dart';
-import 'package:minimal_portfolio_webapp/screens/home/home.dart';
-import 'package:minimal_portfolio_webapp/screens/projects/projects.dart';
+import 'package:minimal_portfolio_webapp/screens/about.dart';
+import 'package:minimal_portfolio_webapp/screens/books.dart';
+import 'package:minimal_portfolio_webapp/screens/home.dart';
+import 'package:minimal_portfolio_webapp/screens/projects.dart';
 
 double collapsableHeight = 0.0;
 

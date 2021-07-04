@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:minimal_portfolio_webapp/data/shots.dart';
-import 'package:minimal_portfolio_webapp/screens/components/dark_mode_switch.dart';
-import 'package:minimal_portfolio_webapp/screens/components/nav_bar.dart';
-import 'package:minimal_portfolio_webapp/screens/components/theme_data.dart';
-import 'package:minimal_portfolio_webapp/screens/components/top_bar.dart';
+import 'package:minimal_portfolio_webapp/models/shots.dart';
+import 'package:minimal_portfolio_webapp/widgets/dark_mode_switch.dart';
+import 'package:minimal_portfolio_webapp/widgets/nav_bar.dart';
 import 'package:minimal_portfolio_webapp/services/dribbble_api.dart';
+import 'package:minimal_portfolio_webapp/widgets/theme_data.dart';
+import 'package:minimal_portfolio_webapp/widgets/url_launcher.dart';
 import 'package:provider/provider.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'components/home_nav.dart';
-import 'components/social_icons.dart';
-import '../../data/shots.dart';
+import '../models/shots.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -26,10 +23,10 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     WidgetsFlutterBinding.ensureInitialized();
     super.initState();
-    this.getData();
+    this._getData();
   }
 
-  void getData() async {
+  void _getData() async {
     List<Shots> shots = [];
     shots = await DribbbleApi.instance.fetchData();
     print(shots[0].id);
@@ -38,11 +35,11 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-  isFeedEmpty() {
+  _isFeedEmpty() {
     return dribbbleData.isEmpty;
   }
 
-  showImages() {
+  _showImages() {
     return GridView.builder(
         physics: NeverScrollableScrollPhysics(),
         shrinkWrap: true,
@@ -96,21 +93,89 @@ class _HomeScreenState extends State<HomeScreen> {
         });
   }
 
-  body() {
-    return isFeedEmpty()
+  _body() {
+    return _isFeedEmpty()
         ? Center(
             child: Container(
                 width: 50, height: 50, child: CircularProgressIndicator()),
           )
-        : showImages();
+        : _showImages();
   }
 
-  launchURL(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
+  Widget _socialIcon(String imagePath, String link) {
+    return Container(
+      margin: EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: Colors.white,
+      ),
+      child: IconButton(
+          icon: Image.asset(
+            imagePath,
+          ),
+          onPressed: () {
+            launchURL(link);
+          }),
+    );
+  }
+
+  Widget _socialIcons() {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          _socialIcon(
+              'assets/emojis/twitter.png', "https://twitter.com/DevHarithWick"),
+          _socialIcon('assets/emojis/linkedin.png',
+              "https://www.linkedin.com/in/harithwick/"),
+          _socialIcon(
+              'assets/emojis/github.png', "https://github.com/harithsen"),
+        ],
+      ),
+    );
+  }
+
+  Widget _webButton({String text1, String text2, String imagePath}) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: OutlinedButton(
+          onPressed: () {},
+          child: Row(
+            children: [
+              Image(
+                image: AssetImage(imagePath),
+                width: 40,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(6),
+                child: Text(
+                  text1 + "\n" + text2,
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline5
+                      .copyWith(fontSize: 16),
+                ),
+              ),
+            ],
+          )),
+    );
+  }
+
+  Widget _webButtons() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        _webButton(
+            text1: "Dribbble",
+            text2: "Designs",
+            imagePath: "assets/emojis/dribbble.png"),
+        _webButton(
+            text1: "Medium",
+            text2: "Articles",
+            imagePath: "assets/emojis/medium.jpeg"),
+      ],
+    );
   }
 
   @override
@@ -125,62 +190,9 @@ class _HomeScreenState extends State<HomeScreen> {
           children: <Widget>[
             NavBar(),
             HomeHeader(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: OutlinedButton(
-                      onPressed: () {},
-                      child: Row(
-                        children: [
-                          Image(
-                            image: AssetImage("assets/emojis/dribbble.png"),
-                            width: 40,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(6),
-                            child: Text(
-                              "Dribbble\nDesigns",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .headline5
-                                  .copyWith(fontSize: 16),
-                            ),
-                          )
-                        ],
-                      )),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: OutlinedButton(
-                      onPressed: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          children: [
-                            Image(
-                              image: AssetImage("assets/emojis/medium.jpeg"),
-                              width: 40,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 8),
-                              child: Text(
-                                "Medium\nArticles",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline5
-                                    .copyWith(fontSize: 16),
-                              ),
-                            )
-                          ],
-                        ),
-                      )),
-                )
-              ],
-            ),
+            _webButtons(),
             SwitchDarkLightMode(themeProvider: themeProvider),
-            SocialIcons(),
+            _socialIcons(),
             SizedBox(
               height: 40,
             ),
@@ -195,7 +207,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Container(
               margin: EdgeInsets.symmetric(horizontal: 16),
               width: 1200,
-              child: body(),
+              child: _body(),
             ),
             SizedBox(
               height: 30,

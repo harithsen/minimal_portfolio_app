@@ -1,6 +1,4 @@
-import 'package:minimal_portfolio_webapp/data/blog_obj.dart';
-
-import 'blog_obj.dart';
+import 'package:minimal_portfolio_webapp/models/blog_obj.dart';
 
 class BlogBrain {
   List<BlogPosts> blogBank = [

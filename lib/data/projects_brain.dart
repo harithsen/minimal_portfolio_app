@@ -1,5 +1,5 @@
-import 'project_obj.dart';
-import 'package:flutter/material.dart';
+import 'package:minimal_portfolio_webapp/models/project_obj.dart';
+import "package:flutter/material.dart";
 
 class ProjectsBrain {
   List<Project> projectsBank = [

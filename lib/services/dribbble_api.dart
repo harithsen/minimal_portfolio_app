@@ -1,6 +1,6 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import '../data/shots.dart';
+import '../models/shots.dart';
 
 class DribbbleApi {
   static DribbbleApi _instance;
