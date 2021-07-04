@@ -14,6 +14,7 @@ class SwitchDarkLightMode extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Row(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Icon(Icons.nights_stay),
           Switch(
