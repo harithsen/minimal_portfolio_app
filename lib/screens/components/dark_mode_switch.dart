@@ -16,7 +16,10 @@ class SwitchDarkLightMode extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.nights_stay),
+          Icon(
+            Icons.nights_stay,
+            color: Colors.grey,
+          ),
           Switch(
             activeColor: Colors.white,
             activeTrackColor: Colors.deepOrangeAccent,
@@ -29,6 +32,7 @@ class SwitchDarkLightMode extends StatelessWidget {
           ),
           Icon(
             Icons.wb_sunny_outlined,
+            color: Colors.deepOrange,
           ),
         ],
       ),

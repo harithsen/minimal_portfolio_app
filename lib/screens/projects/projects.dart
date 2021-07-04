@@ -14,23 +14,33 @@ class Projects extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Align(
-        alignment: Alignment.topCenter,
-        child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 16),
-          width: 600,
-          child: SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                NavBar(),
-                SizedBox(height: 32),
-                SubHeading(label: "Projects"),
-                Project(),
-              ],
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            NavBar(),
+            Container(
+              width: double.infinity,
+              height: 150,
+              margin: EdgeInsets.only(bottom: 32),
+              child: Text(
+                "Projects",
+                style: Theme.of(context).textTheme.headline5.copyWith(
+                      color: Colors.white,
+                    ),
+              ),
+              alignment: Alignment.center,
+              color: Colors.orange,
             ),
-          ),
+            Align(
+              alignment: Alignment.topCenter,
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 16),
+                width: 600,
+                child: Project(),
+              ),
+            ),
+          ],
         ),
       ),
     );

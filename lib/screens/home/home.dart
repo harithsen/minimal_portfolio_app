@@ -123,25 +123,64 @@ class _HomeScreenState extends State<HomeScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            //TopBar(),
             NavBar(),
             HomeHeader(),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                TextButton(
-                    onPressed: () {},
-                    child: Image(
-                      image: AssetImage("assets/emojis/dribbble.png"),
-                    )),
-                TextButton(
-                    onPressed: () {},
-                    child: Image(
-                      image: AssetImage("assets/emojis/medium.jpeg"),
-                    ))
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: OutlinedButton(
+                      onPressed: () {},
+                      child: Row(
+                        children: [
+                          Image(
+                            image: AssetImage("assets/emojis/dribbble.png"),
+                            width: 40,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(6),
+                            child: Text(
+                              "Dribbble\nDesigns",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline5
+                                  .copyWith(fontSize: 16),
+                            ),
+                          )
+                        ],
+                      )),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: OutlinedButton(
+                      onPressed: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          children: [
+                            Image(
+                              image: AssetImage("assets/emojis/medium.jpeg"),
+                              width: 40,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 8),
+                              child: Text(
+                                "Medium\nArticles",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline5
+                                    .copyWith(fontSize: 16),
+                              ),
+                            )
+                          ],
+                        ),
+                      )),
+                )
               ],
             ),
-            SocialIcons(),
             SwitchDarkLightMode(themeProvider: themeProvider),
+            SocialIcons(),
             SizedBox(
               height: 40,
             ),

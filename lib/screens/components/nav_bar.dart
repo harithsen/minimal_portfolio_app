@@ -6,8 +6,6 @@ import 'package:minimal_portfolio_webapp/screens/home/home.dart';
 import 'package:minimal_portfolio_webapp/screens/projects/projects.dart';
 
 double collapsableHeight = 0.0;
-Color selected = Colors.deepOrange;
-Color notSelected = Color(0xafffffff);
 
 class NavBar extends StatefulWidget {
   @override
@@ -30,8 +28,11 @@ class _NavBarState extends State<NavBar> {
           height: (width < 800.0) ? collapsableHeight : 0.0,
           width: double.infinity,
           child: SingleChildScrollView(
-            child: Column(
-              children: navBarItems,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Column(
+                children: navBarItems,
+              ),
             ),
           ),
         ),
@@ -137,19 +138,19 @@ class NavBarItem extends StatefulWidget {
 }
 
 class _NavBarItemState extends State<NavBarItem> {
-  Color color = notSelected;
+  bool hoover = false;
 
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
       onEnter: (value) {
         setState(() {
-          color = selected;
+          hoover = true;
         });
       },
       onExit: (value) {
         setState(() {
-          color = notSelected;
+          hoover = false;
         });
       },
       child: Material(
@@ -166,7 +167,7 @@ class _NavBarItemState extends State<NavBarItem> {
             child: Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(right: 4),
+                  padding: const EdgeInsets.only(right: 8),
                   child: Image(
                     image: AssetImage(
                       widget.image,
@@ -178,7 +179,9 @@ class _NavBarItemState extends State<NavBarItem> {
                   widget.text,
                   style: TextStyle(
                     fontSize: 16.0,
-                    color: color,
+                    color: hoover
+                        ? Colors.deepOrange
+                        : Theme.of(context).textTheme.bodyText1.color,
                   ),
                 ),
               ],
