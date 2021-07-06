@@ -44,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
         physics: NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 600,
+            maxCrossAxisExtent: 350,
             childAspectRatio: 4 / 3,
             crossAxisSpacing: 20,
             mainAxisSpacing: 20),
@@ -136,11 +136,14 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _webButton({String text1, String text2, String imagePath}) {
+  Widget _webButton(
+      {String text1, String text2, String imagePath, String url}) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: OutlinedButton(
-          onPressed: () {},
+          onPressed: () {
+            launchURL(url);
+          },
           child: Row(
             children: [
               Image(
@@ -169,11 +172,13 @@ class _HomeScreenState extends State<HomeScreen> {
         _webButton(
             text1: "Dribbble",
             text2: "Designs",
-            imagePath: "assets/emojis/dribbble.png"),
+            imagePath: "assets/emojis/dribbble.png",
+            url: "https://dribbble.com/harithwick"),
         _webButton(
             text1: "Medium",
             text2: "Articles",
-            imagePath: "assets/emojis/medium.jpeg"),
+            imagePath: "assets/emojis/medium.jpeg",
+            url: "https://harithwick.medium.com/"),
       ],
     );
   }
@@ -234,7 +239,7 @@ class HomeHeader extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: CircleAvatar(
-            radius: 60.0,
+            radius: 55.0,
             child:
                 ClipOval(child: Image.asset('assets/images/profile_pic.jpg')),
           ),
@@ -250,8 +255,8 @@ class HomeHeader extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Image.asset(
-                'assets/emojis/hand_wave.png',
-                scale: 1.8,
+                'assets/emojis/hand.gif',
+                width: 60,
               ),
             )
           ],

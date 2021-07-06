@@ -33,12 +33,12 @@ final lightTheme = ThemeData(
         color: Colors.white, fontWeight: FontWeight.w900, letterSpacing: 1.5),
     headline6: GoogleFonts.aBeeZee(
       color: Colors.white,
-      fontSize: 18,
+      fontSize: 20,
       fontWeight: FontWeight.bold,
       letterSpacing: 1,
     ),
     bodyText1: GoogleFonts.aBeeZee(
-        fontSize: 14,
+        fontSize: 16,
         fontWeight: FontWeight.bold,
         color: Colors.white70,
         letterSpacing: 1),
@@ -71,12 +71,12 @@ final darkTheme = ThemeData(
         color: Colors.black87, fontWeight: FontWeight.w900, letterSpacing: 1.5),
     headline6: GoogleFonts.aBeeZee(
       color: Colors.black87,
-      fontSize: 18,
+      fontSize: 20,
       fontWeight: FontWeight.bold,
       letterSpacing: 1,
     ),
     bodyText1: GoogleFonts.aBeeZee(
-        fontSize: 14,
+        fontSize: 16,
         fontWeight: FontWeight.bold,
         color: Colors.grey[600],
         letterSpacing: 1),

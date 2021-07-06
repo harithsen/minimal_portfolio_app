@@ -159,6 +159,9 @@ class _NavBarItemState extends State<NavBarItem> {
           splashColor: Colors.white60,
           onTap: () {
             Navigator.pushNamed(context, widget.route);
+            setState(() {
+              collapsableHeight = 0.0;
+            });
           },
           child: Container(
             height: 60.0,
