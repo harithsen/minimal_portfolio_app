@@ -44,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
         physics: NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 350,
+            maxCrossAxisExtent: 410,
             childAspectRatio: 4 / 3,
             crossAxisSpacing: 20,
             mainAxisSpacing: 20),
