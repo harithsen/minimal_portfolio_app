@@ -69,10 +69,7 @@ class Books extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 30, bottom: 30),
-                    child: Divider(),
-                  ),
+                  SizedBox(height: 60)
                 ],
               );
             }),

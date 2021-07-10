@@ -5,6 +5,7 @@ import 'package:minimal_portfolio_webapp/services/dribbble_api.dart';
 import 'package:minimal_portfolio_webapp/widgets/nav_bar.dart';
 import 'package:minimal_portfolio_webapp/widgets/page_header.dart';
 import 'package:minimal_portfolio_webapp/widgets/url_launcher.dart';
+import 'package:shimmer/shimmer.dart';
 
 class Design extends StatefulWidget {
   static const routeName = '/design';
@@ -63,10 +64,19 @@ class _DesignState extends State<Design> {
                       child: CachedNetworkImage(
                         imageUrl: dribbbleData[index].images.hidpi,
                         placeholder: (context, url) => Center(
-                          child: Container(
-                              height: 5,
-                              width: double.infinity,
-                              child: LinearProgressIndicator()),
+                          child: Shimmer.fromColors(
+                            baseColor: Colors.orange,
+                            highlightColor: Colors.black,
+                            enabled: true,
+                            child: Text(
+                              'Loading...',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
                         ),
                         errorWidget: (context, url, error) => Icon(Icons.error),
                       ),
