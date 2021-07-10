@@ -26,7 +26,6 @@ final lightTheme = ThemeData(
       style: ButtonStyle(
     foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
   )),
-  //accentColor: Colors.teal,
   iconTheme: IconThemeData(color: Colors.black87),
   textTheme: TextTheme(
     headline5: GoogleFonts.dmSans(
@@ -61,7 +60,6 @@ final darkTheme = ThemeData(
   )),
   primarySwatch: Colors.blue,
   inputDecorationTheme: InputDecorationTheme(
-    //border: OutlineInputBorder(),
     labelStyle: TextStyle(color: Colors.deepOrange, fontSize: 24.0),
   ),
   iconTheme: IconThemeData(color: Colors.lightBlue),
