@@ -1,16 +1,7 @@
-# minimal_portfolio_webapp
+# My Portfolio App
 
-A new Flutter project.
+![image](https://user-images.githubusercontent.com/25376023/125152959-d5e61580-e193-11eb-9d17-583770bea404.png)
 
-## Getting Started
+Visit harithwick.com for live demo of this code.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Uses the Dribbble api to get the Dribbble API. You'll need to generate an access token to be able to access the Dribbble Shots.
