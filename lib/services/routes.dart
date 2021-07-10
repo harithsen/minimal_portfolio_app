@@ -6,4 +6,5 @@ var appRoutes = <String, WidgetBuilder>{
   AboutMe.routeName: (context) => AboutMe(),
   Projects.routeName: (context) => Projects(),
   Books.routeName: (context) => Books(),
+  Design.routeName: (context) => Design(),
 };

@@ -30,14 +30,9 @@ class Projects extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 8, bottom: 8),
-                  child: Text(
-                    ProjectsBrain().projectsBank[index].heading,
-                    textAlign: TextAlign.left,
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyText1
-                        .copyWith(color: Colors.blue),
-                  ),
+                  child: Text(ProjectsBrain().projectsBank[index].heading,
+                      textAlign: TextAlign.left,
+                      style: Theme.of(context).textTheme.headline6),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(bottom: 8),
@@ -48,17 +43,15 @@ class Projects extends StatelessWidget {
                       for (var tool
                           in ProjectsBrain().projectsBank[index].tools)
                         Padding(
-                            padding: EdgeInsets.only(right: 4),
-                            child: Chip(
-                              backgroundColor: tool[1],
-                              labelPadding: EdgeInsets.symmetric(
-                                  horizontal: 4, vertical: 0),
-                              label: Text(
-                                tool[0],
-                                style: TextStyle(
-                                    fontSize: 10, color: Colors.white),
-                              ),
-                            ))
+                          padding: EdgeInsets.only(right: 8),
+                          child: Text(
+                            tool[0],
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyText2
+                                .copyWith(color: tool[1]),
+                          ),
+                        )
                     ],
                   ),
                 ),
@@ -101,11 +94,9 @@ class Projects extends StatelessWidget {
                         padding: EdgeInsets.only(top: 8),
                         child: Chip(
                           backgroundColor: Colors.grey,
-                          labelPadding:
-                              EdgeInsets.symmetric(horizontal: 4, vertical: 0),
                           label: Text(
                             "Coming Soon",
-                            style: TextStyle(fontSize: 10, color: Colors.white),
+                            style: TextStyle(fontSize: 12, color: Colors.white),
                           ),
                         ))
                     : Container(),

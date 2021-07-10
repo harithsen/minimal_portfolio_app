@@ -5,7 +5,7 @@ import 'package:minimal_portfolio_webapp/widgets/page_header.dart';
 import 'package:minimal_portfolio_webapp/widgets/url_launcher.dart';
 
 class Books extends StatelessWidget {
-  static const routeName = '/FavBooks';
+  static const routeName = '/favbooks';
 
   Widget _booksBody() {
     return Align(
@@ -32,10 +32,7 @@ class Books extends StatelessWidget {
                     child: Text(
                       BooksBrain().booksBank[index].heading,
                       textAlign: TextAlign.left,
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyText1
-                          .copyWith(color: Colors.blue),
+                      style: Theme.of(context).textTheme.headline6,
                     ),
                   ),
                   Text(
@@ -63,7 +60,13 @@ class Books extends StatelessWidget {
                       onPressed: () =>
                           launchURL(BooksBrain().booksBank[index].buyURL),
                       icon: Icon(Icons.arrow_right),
-                      label: Text("Buy Book"),
+                      label: Text(
+                        "Buy Book",
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyText2
+                            .copyWith(fontSize: 14, color: Colors.blue),
+                      ),
                     ),
                   ),
                   Padding(

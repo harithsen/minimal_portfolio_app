@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:minimal_portfolio_webapp/models/shots.dart';
 import 'package:minimal_portfolio_webapp/widgets/dark_mode_switch.dart';
 import 'package:minimal_portfolio_webapp/widgets/nav_bar.dart';
-import 'package:minimal_portfolio_webapp/services/dribbble_api.dart';
 import 'package:minimal_portfolio_webapp/widgets/theme_data.dart';
 import 'package:minimal_portfolio_webapp/widgets/url_launcher.dart';
 import 'package:provider/provider.dart';
 import '../models/shots.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 
 class HomeScreen extends StatefulWidget {
   static const routeName = '/';
@@ -23,83 +20,6 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     WidgetsFlutterBinding.ensureInitialized();
     super.initState();
-    this._getData();
-  }
-
-  void _getData() async {
-    List<Shots> shots = [];
-    shots = await DribbbleApi.instance.fetchData();
-    print(shots[0].id);
-    setState(() {
-      dribbbleData = shots;
-    });
-  }
-
-  _isFeedEmpty() {
-    return dribbbleData.isEmpty;
-  }
-
-  _showImages() {
-    return GridView.builder(
-        physics: NeverScrollableScrollPhysics(),
-        shrinkWrap: true,
-        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 410,
-            childAspectRatio: 4 / 3,
-            crossAxisSpacing: 20,
-            mainAxisSpacing: 20),
-        itemCount: dribbbleData.length,
-        itemBuilder: (BuildContext ctx, index) {
-          return InkWell(
-            onTap: () {
-              launchURL(dribbbleData[index].htmlUrl);
-            },
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: GridTile(
-                  child: CachedNetworkImage(
-                    imageUrl: dribbbleData[index].images.hidpi,
-                    placeholder: (context, url) => Center(
-                      child: Container(
-                          height: 5,
-                          width: double.infinity,
-                          child: LinearProgressIndicator()),
-                    ),
-                    errorWidget: (context, url, error) => Icon(Icons.error),
-                  ),
-                  footer: Container(
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          stops: [0, 0.8, 1],
-                          colors: [
-                            Colors.transparent,
-                            Colors.black87,
-                            Colors.black,
-                          ],
-                        ),
-                      ),
-                      padding: EdgeInsets.all(8),
-                      child: Text(
-                        dribbbleData[index].title,
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.white),
-                      ))),
-            ),
-          );
-        });
-  }
-
-  _body() {
-    return _isFeedEmpty()
-        ? Center(
-            child: Container(
-                width: 50, height: 50, child: CircularProgressIndicator()),
-          )
-        : _showImages();
   }
 
   Widget _socialIcon(String imagePath, String link) {
@@ -177,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
         _webButton(
             text1: "Medium",
             text2: "Articles",
-            imagePath: "assets/emojis/medium.jpeg",
+            imagePath: "assets/emojis/medium.png",
             url: "https://harithwick.medium.com/"),
       ],
     );
@@ -196,27 +116,11 @@ class _HomeScreenState extends State<HomeScreen> {
             NavBar(),
             HomeHeader(),
             _webButtons(),
-            SwitchDarkLightMode(themeProvider: themeProvider),
             _socialIcons(),
+            SwitchDarkLightMode(themeProvider: themeProvider),
             SizedBox(
               height: 40,
             ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 16),
-              child: Text(
-                "- Design -",
-                style: GoogleFonts.rockSalt(
-                    fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 16),
-              width: 1200,
-              child: _body(),
-            ),
-            SizedBox(
-              height: 30,
-            )
           ],
         ),
       ),

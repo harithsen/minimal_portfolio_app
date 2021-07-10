@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:minimal_portfolio_webapp/screens/about.dart';
-import 'package:minimal_portfolio_webapp/screens/books.dart';
-import 'package:minimal_portfolio_webapp/screens/home.dart';
-import 'package:minimal_portfolio_webapp/screens/projects.dart';
+import 'package:minimal_portfolio_webapp/screens/screens_export.dart';
 
 double collapsableHeight = 0.0;
 
@@ -45,9 +42,9 @@ class _NavBarState extends State<NavBar> {
                 onPressed: () {
                   if (collapsableHeight == 0.0) {
                     setState(() {
-                      collapsableHeight = 240.0;
+                      collapsableHeight = 280.0;
                     });
-                  } else if (collapsableHeight == 240.0) {
+                  } else if (collapsableHeight == 280.0) {
                     setState(() {
                       collapsableHeight = 0.0;
                     });
@@ -114,13 +111,17 @@ List<Widget> navBarItems = [
       route: AboutMe.routeName,
       image: 'assets/emojis/about.png'),
   NavBarItem(
-      text: 'Fav Books',
-      route: Books.routeName,
-      image: 'assets/emojis/book.png'),
+      text: 'Design',
+      route: Design.routeName,
+      image: 'assets/emojis/design.png'),
   NavBarItem(
       text: 'Projects',
       route: Projects.routeName,
       image: 'assets/emojis/rocket.png'),
+  NavBarItem(
+      text: 'Fav Books',
+      route: Books.routeName,
+      image: 'assets/emojis/book.png'),
 ];
 
 class NavBarItem extends StatefulWidget {

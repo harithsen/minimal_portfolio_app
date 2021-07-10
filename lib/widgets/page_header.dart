@@ -15,9 +15,10 @@ class PageHeader extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 32),
       child: Text(
         label,
-        style: Theme.of(context).textTheme.headline5.copyWith(
-              color: Colors.white,
-            ),
+        style: Theme.of(context)
+            .textTheme
+            .headline5
+            .copyWith(color: Colors.white, fontSize: 32),
       ),
       alignment: Alignment.center,
       color: Colors.orange,

@@ -29,22 +29,26 @@ final lightTheme = ThemeData(
   //accentColor: Colors.teal,
   iconTheme: IconThemeData(color: Colors.black87),
   textTheme: TextTheme(
-    headline5: GoogleFonts.aBeeZee(
-        color: Colors.white, fontWeight: FontWeight.w900, letterSpacing: 1.5),
-    headline6: GoogleFonts.aBeeZee(
+    headline5: GoogleFonts.dmSans(
+        color: Colors.white,
+        fontWeight: FontWeight.w900,
+        fontSize: 28,
+        letterSpacing: 1.5),
+    headline6: GoogleFonts.dmSans(
       color: Colors.white,
-      fontSize: 20,
+      fontSize: 22,
       fontWeight: FontWeight.bold,
       letterSpacing: 1,
     ),
-    bodyText1: GoogleFonts.aBeeZee(
-        fontSize: 16,
+    bodyText1: GoogleFonts.dmSans(
+        fontSize: 18,
         fontWeight: FontWeight.bold,
         color: Colors.white70,
         letterSpacing: 1),
-    bodyText2: GoogleFonts.aBeeZee(
+    bodyText2: GoogleFonts.dmSans(
       color: Colors.white,
       letterSpacing: 0.7,
+      fontSize: 18,
     ),
   ),
   visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -67,22 +71,26 @@ final darkTheme = ThemeData(
   ),
   accentColor: Colors.teal,
   textTheme: TextTheme(
-    headline5: GoogleFonts.aBeeZee(
-        color: Colors.black87, fontWeight: FontWeight.w900, letterSpacing: 1.5),
-    headline6: GoogleFonts.aBeeZee(
+    headline5: GoogleFonts.dmSans(
+        color: Colors.black87,
+        fontWeight: FontWeight.w900,
+        fontSize: 28,
+        letterSpacing: 1.5),
+    headline6: GoogleFonts.dmSans(
       color: Colors.black87,
-      fontSize: 20,
+      fontSize: 22,
       fontWeight: FontWeight.bold,
       letterSpacing: 1,
     ),
-    bodyText1: GoogleFonts.aBeeZee(
-        fontSize: 16,
+    bodyText1: GoogleFonts.dmSans(
+        fontSize: 18,
         fontWeight: FontWeight.bold,
         color: Colors.grey[600],
         letterSpacing: 1),
-    bodyText2: GoogleFonts.aBeeZee(
+    bodyText2: GoogleFonts.dmSans(
       color: Colors.grey[600],
       letterSpacing: 0.7,
+      fontSize: 18,
     ),
   ),
   visualDensity: VisualDensity.adaptivePlatformDensity,
