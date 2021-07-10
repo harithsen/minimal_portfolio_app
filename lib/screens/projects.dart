@@ -48,7 +48,7 @@ class Projects extends StatelessWidget {
                             tool[0],
                             style: Theme.of(context)
                                 .textTheme
-                                .bodyText2
+                                .bodyText2!
                                 .copyWith(color: tool[1]),
                           ),
                         )
@@ -62,7 +62,7 @@ class Projects extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    ProjectsBrain().projectsBank[index].appStore != null
+                    ProjectsBrain().projectsBank[index].appStore != ""
                         ? IconButton(
                             icon: Image.asset('assets/images/appstore.png'),
                             onPressed: () {
@@ -70,7 +70,7 @@ class Projects extends StatelessWidget {
                                   ProjectsBrain().projectsBank[index].appStore);
                             })
                         : Container(),
-                    ProjectsBrain().projectsBank[index].playStore != null
+                    ProjectsBrain().projectsBank[index].playStore != ""
                         ? IconButton(
                             icon: Image.asset('assets/images/playstore.png'),
                             onPressed: () {
@@ -79,7 +79,7 @@ class Projects extends StatelessWidget {
                                   .playStore);
                             })
                         : Container(),
-                    ProjectsBrain().projectsBank[index].website != null
+                    ProjectsBrain().projectsBank[index].website != ""
                         ? IconButton(
                             icon: Image.asset('assets/images/www.png'),
                             onPressed: () {
@@ -100,7 +100,7 @@ class Projects extends StatelessWidget {
                           ),
                         ))
                     : Container(),
-                SizedBox(height: 60)
+                SizedBox(height: 80)
               ],
             );
           },

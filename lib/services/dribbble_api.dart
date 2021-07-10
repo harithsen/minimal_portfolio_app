@@ -3,16 +3,16 @@ import 'dart:convert';
 import '../models/shots.dart';
 
 class DribbbleApi {
-  static DribbbleApi _instance;
+  // static late DribbbleApi _instance;
 
-  DribbbleApi._();
+  // DribbbleApi._();
 
-  static DribbbleApi get instance {
-    if (_instance == null) {
-      _instance = DribbbleApi._();
-    }
-    return _instance;
-  }
+  // static DribbbleApi get instance {
+  //   // if (_instance == null) {
+  //   //   _instance = DribbbleApi._();
+  //   // }
+  //   return _instance;
+  // }
 
   Future<List<Shots>> fetchData() async {
     String url =

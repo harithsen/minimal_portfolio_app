@@ -3,9 +3,8 @@ import 'package:minimal_portfolio_webapp/widgets/theme_data.dart';
 
 class SwitchDarkLightMode extends StatelessWidget {
   const SwitchDarkLightMode({
-    Key key,
-    @required this.themeProvider,
-  }) : super(key: key);
+    required this.themeProvider,
+  });
 
   final ThemeProvider themeProvider;
 

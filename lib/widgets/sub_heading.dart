@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 class SubHeading extends StatelessWidget {
   final String label;
   const SubHeading({
-    this.label,
-    Key key,
-  }) : super(key: key);
+    required this.label,
+  });
 
   @override
   Widget build(BuildContext context) {

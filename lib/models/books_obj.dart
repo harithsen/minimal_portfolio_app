@@ -6,5 +6,9 @@ class Book {
   String buyURL;
 
   Book(
-      {this.imagePath, this.heading, this.keytakeaway, this.disc, this.buyURL});
+      {required this.imagePath,
+      required this.heading,
+      required this.keytakeaway,
+      required this.disc,
+      required this.buyURL});
 }

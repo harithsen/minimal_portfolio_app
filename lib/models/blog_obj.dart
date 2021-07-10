@@ -5,5 +5,10 @@ class BlogPosts {
   String link;
   String date;
 
-  BlogPosts({this.title, this.image, this.tags, this.link, this.date});
+  BlogPosts(
+      {required this.title,
+      required this.image,
+      required this.tags,
+      required this.link,
+      required this.date});
 }

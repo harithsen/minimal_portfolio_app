@@ -12,9 +12,9 @@ class ProjectsBrain {
           ["Web3", Colors.blueAccent],
           ["Solidity", Colors.greenAccent],
         ],
-        appStore: null,
-        playStore: null,
-        website: null,
+        appStore: "",
+        playStore: "",
+        website: "",
         comingSoon: true),
     Project(
         heading: "Snapps Bookmark Manager",
@@ -24,9 +24,9 @@ class ProjectsBrain {
         tools: [
           ["React", Colors.red],
         ],
-        appStore: null,
-        playStore: null,
-        website: null,
+        appStore: "",
+        playStore: "",
+        website: "",
         comingSoon: true),
     Project(
         heading: "NAATI Sinhalese",
@@ -53,8 +53,8 @@ class ProjectsBrain {
           ["React", Colors.red],
           ["AWS", Colors.blueGrey],
         ],
-        appStore: null,
-        playStore: null,
+        appStore: "",
+        playStore: "",
         website:
             "https://www.auckland.ac.nz/en/news/2020/09/20/app--for-healthcare-workers-in-uganda-wins-award.html",
         comingSoon: false),
@@ -66,8 +66,8 @@ class ProjectsBrain {
         tools: [
           ["Flutter", Colors.blue]
         ],
-        website: null,
-        appStore: null,
+        website: "",
+        appStore: "",
         playStore:
             "https://play.google.com/store/apps/details?id=com.jayanandharithwick.simple_notes&hl=en_US&gl=US",
         comingSoon: false),

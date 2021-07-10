@@ -68,7 +68,7 @@ class NavBarButton extends StatefulWidget {
   final Function onPressed;
 
   NavBarButton({
-    this.onPressed,
+    required this.onPressed,
   });
 
   @override
@@ -129,9 +129,9 @@ class NavBarItem extends StatefulWidget {
   final String route;
   final String image;
   NavBarItem({
-    this.text,
-    this.route,
-    this.image,
+    required this.text,
+    required this.route,
+    required this.image,
   });
 
   @override
@@ -185,7 +185,7 @@ class _NavBarItemState extends State<NavBarItem> {
                     fontSize: 16.0,
                     color: hoover
                         ? Colors.deepOrange
-                        : Theme.of(context).textTheme.bodyText1.color,
+                        : Theme.of(context).textTheme.bodyText1!.color,
                   ),
                 ),
               ],

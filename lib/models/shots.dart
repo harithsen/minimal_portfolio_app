@@ -6,21 +6,21 @@ String ShotsToJson(Shots data) => json.encode(data.toJson());
 
 class Shots {
   Shots({
-    this.animated,
-    this.description,
-    this.height,
-    this.htmlUrl,
-    this.id,
-    this.images,
-    this.lowProfile,
-    this.tags,
-    this.title,
-    this.width,
-    this.publishedAt,
-    this.updatedAt,
-    this.attachments,
-    this.projects,
-    this.video,
+    required this.animated,
+    required this.description,
+    required this.height,
+    required this.htmlUrl,
+    required this.id,
+    required this.images,
+    required this.lowProfile,
+    required this.tags,
+    required this.title,
+    required this.width,
+    required this.publishedAt,
+    required this.updatedAt,
+    required this.attachments,
+    required this.projects,
+    required this.video,
   });
 
   bool animated;
@@ -78,12 +78,12 @@ class Shots {
 
 class Images {
   Images({
-    this.hidpi,
-    this.normal,
-    this.oneX,
-    this.twoX,
-    this.fourX,
-    this.teaser,
+    required this.hidpi,
+    required this.normal,
+    required this.oneX,
+    required this.twoX,
+    required this.fourX,
+    required this.teaser,
   });
 
   String hidpi;

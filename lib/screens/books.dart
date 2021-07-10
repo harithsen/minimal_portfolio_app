@@ -64,12 +64,12 @@ class Books extends StatelessWidget {
                         "Buy Book",
                         style: Theme.of(context)
                             .textTheme
-                            .bodyText2
+                            .bodyText2!
                             .copyWith(fontSize: 14, color: Colors.blue),
                       ),
                     ),
                   ),
-                  SizedBox(height: 60)
+                  SizedBox(height: 80)
                 ],
               );
             }),

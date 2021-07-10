@@ -25,7 +25,7 @@ class _DesignState extends State<Design> {
 
   void _getData() async {
     List<Shots> shots = [];
-    shots = await DribbbleApi.instance.fetchData();
+    shots = await DribbbleApi().fetchData();
     print(shots[0].id);
     setState(() {
       dribbbleData = shots;

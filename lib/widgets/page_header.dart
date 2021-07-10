@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 class PageHeader extends StatelessWidget {
   final String label;
   const PageHeader({
-    Key key,
-    this.label,
-  }) : super(key: key);
+    required this.label,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +16,7 @@ class PageHeader extends StatelessWidget {
         label,
         style: Theme.of(context)
             .textTheme
-            .headline5
+            .headline5!
             .copyWith(color: Colors.white, fontSize: 32),
       ),
       alignment: Alignment.center,

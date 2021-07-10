@@ -49,15 +49,16 @@ class _HomeScreenState extends State<HomeScreen> {
               'assets/emojis/twitter.png', "https://twitter.com/DevHarithWick"),
           _socialIcon('assets/emojis/linkedin.png',
               "https://www.linkedin.com/in/harithwick/"),
-          _socialIcon(
-              'assets/emojis/github.png', "https://github.com/harithsen"),
         ],
       ),
     );
   }
 
   Widget _webButton(
-      {String text1, String text2, String imagePath, String url}) {
+      {required String text1,
+      required String text2,
+      required String imagePath,
+      required String url}) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: OutlinedButton(
@@ -76,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   text1 + "\n" + text2,
                   style: Theme.of(context)
                       .textTheme
-                      .headline5
+                      .headline5!
                       .copyWith(fontSize: 16),
                 ),
               ),
@@ -86,19 +87,38 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _webButtons() {
-    return Row(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        _webButton(
-            text1: "Dribbble",
-            text2: "Designs",
-            imagePath: "assets/emojis/dribbble.png",
-            url: "https://dribbble.com/harithwick"),
-        _webButton(
-            text1: "Medium",
-            text2: "Articles",
-            imagePath: "assets/emojis/medium.png",
-            url: "https://harithwick.medium.com/"),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            _webButton(
+                text1: "Dribbble",
+                text2: "Designs",
+                imagePath: "assets/emojis/dribbble.png",
+                url: "https://dribbble.com/harithwick"),
+            _webButton(
+                text1: "Medium",
+                text2: "Articles",
+                imagePath: "assets/emojis/medium.png",
+                url: "https://harithwick.medium.com/"),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            _webButton(
+                text1: "Github",
+                text2: "Projects",
+                imagePath: "assets/emojis/github.png",
+                url: "https://github.com/harithwick"),
+          ],
+        )
       ],
     );
   }
@@ -129,10 +149,6 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class HomeHeader extends StatelessWidget {
-  const HomeHeader({
-    Key key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Column(

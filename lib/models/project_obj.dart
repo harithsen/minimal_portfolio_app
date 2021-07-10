@@ -9,12 +9,12 @@ class Project {
   bool comingSoon;
 
   Project(
-      {this.imagePath,
-      this.heading,
-      this.disc,
-      this.tools,
-      this.appStore,
-      this.playStore,
-      this.website,
-      this.comingSoon});
+      {required this.imagePath,
+      required this.heading,
+      required this.disc,
+      required this.tools,
+      required this.appStore,
+      required this.playStore,
+      required this.website,
+      required this.comingSoon});
 }
