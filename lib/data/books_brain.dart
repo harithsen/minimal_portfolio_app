@@ -7,8 +7,6 @@ class BooksBrain {
         disc:
             "The psychology and principles behind the design of everyday objects around us.",
         imagePath: 'assets/images/design_of_everyday_things.jpg',
-        // keytakeaway:
-        //     "1. If you can't figure out how to operate a device/application, it's not your fault, it's the result of poor design.\n\n2. ",
         keytakeaway: "",
         buyURL:
             "https://www.amazon.com.au/Design-Everyday-Things-Revised-Expanded/dp/0465050654"),

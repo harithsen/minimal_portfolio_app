@@ -159,7 +159,7 @@ class HomeHeader extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: CircleAvatar(
-            radius: 55.0,
+            radius: 80.0,
             child:
                 ClipOval(child: Image.asset('assets/images/profile_pic.jpg')),
           ),

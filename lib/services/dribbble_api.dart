@@ -1,22 +1,14 @@
 import 'package:http/http.dart' as http;
+import 'package:minimal_portfolio_webapp/services/api_details.dart';
 import 'dart:convert';
 import '../models/shots.dart';
 
+//replace APIDetails().access_token with your access token from Dribbble
+
 class DribbbleApi {
-  // static late DribbbleApi _instance;
-
-  // DribbbleApi._();
-
-  // static DribbbleApi get instance {
-  //   // if (_instance == null) {
-  //   //   _instance = DribbbleApi._();
-  //   // }
-  //   return _instance;
-  // }
-
   Future<List<Shots>> fetchData() async {
-    String url =
-        'https://api.dribbble.com/v2/user/shots?access_token=e89489ed2c0310695cb09f5ca146605df0b51a1c7a4426282d9897418a0f4bcf';
+    String url = 'https://api.dribbble.com/v2/user/shots?access_token=' +
+        APIDetails().access_token;
     http.Response response = await http.get(Uri.parse(url));
     final values = jsonDecode(response.body);
 
