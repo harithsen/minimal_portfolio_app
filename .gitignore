@@ -30,6 +30,7 @@
 .pub-cache/
 .pub/
 /build/
+/lib/services/access_token.dart
 lib/services/api_details.dart
 
 # Web related
