@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:minimal_portfolio_webapp/models/shots.dart';
 import 'package:minimal_portfolio_webapp/services/dribbble_api.dart';
 import 'package:minimal_portfolio_webapp/widgets/nav_bar.dart';
@@ -119,12 +120,21 @@ class _DesignState extends State<Design> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
+        body: SingleChildScrollView(
+      child: AnimationLimiter(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [NavBar(), PageHeader(label: "Design"), _body()],
+          children: AnimationConfiguration.toStaggeredList(
+            duration: const Duration(milliseconds: 375),
+            childAnimationBuilder: (widget) => SlideAnimation(
+              horizontalOffset: 50.0,
+              child: FadeInAnimation(
+                child: widget,
+              ),
+            ),
+            children: [NavBar(), PageHeader(label: "Design"), _body()],
+          ),
         ),
       ),
-    );
+    ));
   }
 }

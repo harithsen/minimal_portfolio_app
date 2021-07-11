@@ -6,6 +6,7 @@ import 'package:minimal_portfolio_webapp/widgets/theme_data.dart';
 import 'package:minimal_portfolio_webapp/widgets/url_launcher.dart';
 import 'package:provider/provider.dart';
 import '../models/shots.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 class HomeScreen extends StatefulWidget {
   static const routeName = '/';
@@ -128,23 +129,31 @@ class _HomeScreenState extends State<HomeScreen> {
     final themeProvider = Provider.of<ThemeProvider>(context);
 
     return Scaffold(
-      body: SingleChildScrollView(
+        body: SingleChildScrollView(
+      child: AnimationLimiter(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            NavBar(),
-            HomeHeader(),
-            _webButtons(),
-            _socialIcons(),
-            SwitchDarkLightMode(themeProvider: themeProvider),
-            SizedBox(
-              height: 40,
+          children: AnimationConfiguration.toStaggeredList(
+            duration: const Duration(milliseconds: 375),
+            childAnimationBuilder: (widget) => SlideAnimation(
+              horizontalOffset: 50.0,
+              child: FadeInAnimation(
+                child: widget,
+              ),
             ),
-          ],
+            children: [
+              NavBar(),
+              HomeHeader(),
+              _webButtons(),
+              _socialIcons(),
+              SwitchDarkLightMode(themeProvider: themeProvider),
+              SizedBox(
+                height: 40,
+              ),
+            ],
+          ),
         ),
       ),
-    );
+    ));
   }
 }
 

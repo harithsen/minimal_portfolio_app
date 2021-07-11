@@ -15,6 +15,7 @@ class ProjectsBrain {
         appStore: "",
         playStore: "",
         website: "",
+        github: "",
         comingSoon: true),
     Project(
         heading: "Snapps Bookmark Manager",
@@ -27,6 +28,7 @@ class ProjectsBrain {
         appStore: "",
         playStore: "",
         website: "",
+        github: "",
         comingSoon: true),
     Project(
         heading: "NAATI Sinhalese",
@@ -43,6 +45,21 @@ class ProjectsBrain {
         playStore:
             "https://play.google.com/store/apps/details?id=com.akmilabs.naatisinhala",
         website: "https://naatisinhala.com.au/",
+        github: "",
+        comingSoon: false),
+    Project(
+        heading: "Portfolio Webapp",
+        disc:
+            "A platform to showcase my background, interests and projects I'm working on. (You're on it right now 😂)",
+        imagePath: 'assets/emojis/rocket.png',
+        tools: [
+          ["Flutter", Colors.blue],
+          ["Firebase", Colors.orange],
+        ],
+        appStore: "",
+        playStore: "",
+        website: "https://www.harithwick.com",
+        github: "https://github.com/harithwick/minimal_portfolio_app",
         comingSoon: false),
     Project(
         heading: "Fishing Health Tech",
@@ -57,6 +74,7 @@ class ProjectsBrain {
         playStore: "",
         website:
             "https://www.auckland.ac.nz/en/news/2020/09/20/app--for-healthcare-workers-in-uganda-wins-award.html",
+        github: "",
         comingSoon: false),
     Project(
         heading: "Quick Notes",
@@ -70,6 +88,7 @@ class ProjectsBrain {
         appStore: "",
         playStore:
             "https://play.google.com/store/apps/details?id=com.jayanandharithwick.simple_notes&hl=en_US&gl=US",
+        github: "https://github.com/harithwick/flutter_quick_notes",
         comingSoon: false),
   ];
 }

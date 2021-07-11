@@ -7,6 +7,7 @@ class Project {
   String playStore;
   String website;
   bool comingSoon;
+  String github;
 
   Project(
       {required this.imagePath,
@@ -16,5 +17,5 @@ class Project {
       required this.appStore,
       required this.playStore,
       required this.website,
-      required this.comingSoon});
+      required this.comingSoon, required this.github});
 }

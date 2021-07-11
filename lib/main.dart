@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:minimal_portfolio_webapp/services/route_generator.dart';
 import 'package:minimal_portfolio_webapp/services/routes.dart';
 import 'package:minimal_portfolio_webapp/widgets/theme_data.dart';
 import 'package:provider/provider.dart';
@@ -37,6 +38,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: appRoutes,
+      onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:minimal_portfolio_webapp/widgets/nav_bar.dart';
 import 'package:minimal_portfolio_webapp/widgets/page_header.dart';
 
@@ -23,16 +24,25 @@ class AboutMe extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
+        body: SingleChildScrollView(
+      child: AnimationLimiter(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            NavBar(),
-            PageHeader(label: "About Me"),
-            _aboutBody(context)
-          ],
+          children: AnimationConfiguration.toStaggeredList(
+            duration: const Duration(milliseconds: 375),
+            childAnimationBuilder: (widget) => SlideAnimation(
+              horizontalOffset: 100.0,
+              child: FadeInAnimation(
+                child: widget,
+              ),
+            ),
+            children: [
+              NavBar(),
+              PageHeader(label: "About Me"),
+              _aboutBody(context)
+            ],
+          ),
         ),
       ),
-    );
+    ));
   }
 }
