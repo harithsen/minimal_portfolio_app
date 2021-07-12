@@ -131,7 +131,12 @@ class _DesignState extends State<Design> {
                 child: widget,
               ),
             ),
-            children: [NavBar(), PageHeader(label: "Design"), _body()],
+            children: [
+              NavBar(),
+              PageHeader(label: "Design"),
+              _body(),
+              SizedBox(height: 30)
+            ],
           ),
         ),
       ),

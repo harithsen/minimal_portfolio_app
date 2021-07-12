@@ -113,7 +113,8 @@ class Books extends StatelessWidget {
             children: [
               NavBar(),
               PageHeader(label: "Favourite Books"),
-              _booksBody()
+              _booksBody(),
+              SizedBox(height: 30)
             ],
           ),
         ),

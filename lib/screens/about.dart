@@ -38,7 +38,8 @@ class AboutMe extends StatelessWidget {
             children: [
               NavBar(),
               PageHeader(label: "About Me"),
-              _aboutBody(context)
+              _aboutBody(context),
+              SizedBox(height: 30)
             ],
           ),
         ),

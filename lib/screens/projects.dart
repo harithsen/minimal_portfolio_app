@@ -159,7 +159,8 @@ class Projects extends StatelessWidget {
             children: [
               NavBar(),
               PageHeader(label: "Projects"),
-              _projectsBody()
+              _projectsBody(),
+              SizedBox(height: 30)
             ],
           ),
         ),
