@@ -1,31 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:minimal_portfolio_webapp/models/shots.dart';
 import 'package:minimal_portfolio_webapp/widgets/dark_mode_switch.dart';
+import 'package:minimal_portfolio_webapp/widgets/home_header.dart';
 import 'package:minimal_portfolio_webapp/widgets/nav_bar.dart';
 import 'package:minimal_portfolio_webapp/widgets/theme_data.dart';
 import 'package:minimal_portfolio_webapp/widgets/url_launcher.dart';
 import 'package:provider/provider.dart';
-import '../models/shots.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   static const routeName = '/';
-
-  @override
-  _HomeScreenState createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  List<Shots> dribbbleData = <Shots>[];
-  @override
-  void initState() {
-    WidgetsFlutterBinding.ensureInitialized();
-    super.initState();
-  }
 
   Widget _socialIcon(String imagePath, String link) {
     return Container(
-      margin: EdgeInsets.all(8),
+      margin: const EdgeInsets.all(8),
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: Colors.white,
@@ -59,7 +46,8 @@ class _HomeScreenState extends State<HomeScreen> {
       {required String text1,
       required String text2,
       required String imagePath,
-      required String url}) {
+      required String url,
+      required dynamic context}) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: OutlinedButton(
@@ -87,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _webButtons() {
+  Widget _webButtons(context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
@@ -101,12 +89,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 text1: "Dribbble",
                 text2: "Designs",
                 imagePath: "assets/emojis/dribbble.png",
-                url: "https://dribbble.com/harithwick"),
+                url: "https://dribbble.com/harithwick",
+                context: context),
             _webButton(
                 text1: "Medium",
                 text2: "Articles",
                 imagePath: "assets/emojis/medium.png",
-                url: "https://harithwick.medium.com/"),
+                url: "https://harithwick.medium.com/",
+                context: context),
           ],
         ),
         Row(
@@ -117,7 +107,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 text1: "Github",
                 text2: "Projects",
                 imagePath: "assets/emojis/github.png",
-                url: "https://github.com/harithwick"),
+                url: "https://github.com/harithwick",
+                context: context),
           ],
         )
       ],
@@ -143,10 +134,10 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               NavBar(),
               HomeHeader(),
-              _webButtons(),
+              _webButtons(context),
               _socialIcons(),
               SwitchDarkLightMode(themeProvider: themeProvider),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
             ],
@@ -154,68 +145,5 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
     ));
-  }
-}
-
-class HomeHeader extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          height: 60,
-        ),
-        Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: CircleAvatar(
-            radius: 80.0,
-            child:
-                ClipOval(child: Image.asset('assets/images/profile_pic.jpg')),
-          ),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              "Hey There!",
-              style: Theme.of(context).textTheme.headline5,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Image.asset(
-                'assets/emojis/hand.gif',
-                width: 60,
-              ),
-            )
-          ],
-        ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Text(
-            "I'm Harith Wickramasingha",
-            style: Theme.of(context).textTheme.headline5,
-            textAlign: TextAlign.center,
-          ),
-        ),
-        Container(
-          margin: const EdgeInsets.all(8.0),
-          height: 3,
-          width: 50,
-          color: Colors.blue,
-        ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Text(
-            "Developer, Designer & Entrepreneur",
-            style: Theme.of(context).textTheme.bodyText1,
-            textAlign: TextAlign.center,
-          ),
-        ),
-        SizedBox(
-          height: 16,
-        ),
-      ],
-    );
   }
 }

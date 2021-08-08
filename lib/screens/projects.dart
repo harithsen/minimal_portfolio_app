@@ -12,7 +12,7 @@ class Projects extends StatelessWidget {
     return Align(
       alignment: Alignment.topCenter,
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 16),
+        margin: const EdgeInsets.symmetric(horizontal: 16),
         width: 700,
         child: AnimationLimiter(
           child: ListView.builder(
@@ -55,7 +55,7 @@ class Projects extends StatelessWidget {
                                       .projectsBank[index]
                                       .tools)
                                     Padding(
-                                      padding: EdgeInsets.only(right: 8),
+                                      padding: const EdgeInsets.only(right: 8),
                                       child: Text(
                                         tool[0],
                                         style: Theme.of(context)
@@ -121,7 +121,7 @@ class Projects extends StatelessWidget {
                             ),
                             ProjectsBrain().projectsBank[index].comingSoon
                                 ? Padding(
-                                    padding: EdgeInsets.only(top: 8),
+                                    padding: const EdgeInsets.only(top: 8),
                                     child: Chip(
                                       backgroundColor: Colors.grey,
                                       label: Text(
@@ -131,7 +131,7 @@ class Projects extends StatelessWidget {
                                       ),
                                     ))
                                 : Container(),
-                            SizedBox(height: 80)
+                            const SizedBox(height: 80)
                           ],
                         ),
                       )));

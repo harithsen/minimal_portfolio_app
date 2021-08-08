@@ -11,7 +11,7 @@ class PageHeader extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: 150,
-      margin: EdgeInsets.only(bottom: 32),
+      margin: const EdgeInsets.only(bottom: 32),
       child: Text(
         label,
         style: Theme.of(context)

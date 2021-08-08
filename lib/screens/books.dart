@@ -12,7 +12,7 @@ class Books extends StatelessWidget {
     return Align(
       alignment: Alignment.topCenter,
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 16),
+        margin: const EdgeInsets.symmetric(horizontal: 16),
         width: 700,
         child: AnimationLimiter(
           child: ListView.builder(
@@ -32,7 +32,8 @@ class Books extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
-                                  margin: EdgeInsets.symmetric(vertical: 4),
+                                  margin:
+                                      const EdgeInsets.symmetric(vertical: 4),
                                   width: 80,
                                   child: Image.asset(
                                       BooksBrain().booksBank[index].imagePath)),
@@ -55,7 +56,8 @@ class Books extends StatelessWidget {
                                   ? Padding(
                                       padding: const EdgeInsets.only(top: 8),
                                       child: ExpansionTile(
-                                        childrenPadding: EdgeInsets.all(8),
+                                        childrenPadding:
+                                            const EdgeInsets.all(8),
                                         title: Text("Key Takeaway",
                                             style: Theme.of(context)
                                                 .textTheme
@@ -86,7 +88,7 @@ class Books extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 80)
+                              const SizedBox(height: 80)
                             ],
                           ),
                         )));

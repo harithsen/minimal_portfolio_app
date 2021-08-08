@@ -41,7 +41,7 @@ class _DesignState extends State<Design> {
     return Align(
       alignment: Alignment.topCenter,
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 16),
+        margin: const EdgeInsets.symmetric(horizontal: 16),
         width: 1200,
         child: GridView.builder(
             physics: NeverScrollableScrollPhysics(),
@@ -94,7 +94,7 @@ class _DesignState extends State<Design> {
                               ],
                             ),
                           ),
-                          padding: EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(8),
                           child: Text(
                             dribbbleData[index].title,
                             style: TextStyle(

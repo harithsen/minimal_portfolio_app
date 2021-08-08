@@ -38,7 +38,7 @@ class RouteGenerator {
             children: [
               NavBar(),
               //PageHeader(label: "About Me"),
-              SizedBox(height: 100),
+              const SizedBox(height: 100),
               Image(
                 image: AssetImage(
                   "assets/emojis/error.png",
@@ -47,8 +47,8 @@ class RouteGenerator {
               ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: Text("Page Not Found",
-                    style: TextStyle(color: Colors.orange, fontSize: 24)),
+                child: const Text("Page Not Found",
+                    style: const TextStyle(color: Colors.orange, fontSize: 24)),
               )
             ],
           ),

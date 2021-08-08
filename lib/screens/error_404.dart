@@ -7,7 +7,7 @@ class Error404 extends StatelessWidget {
     return Align(
         alignment: Alignment.center,
         child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 16),
+          margin: const EdgeInsets.symmetric(horizontal: 16),
           width: 700,
           child: Text(
             "Error",
